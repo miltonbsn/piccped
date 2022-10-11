@@ -1,0 +1,37 @@
+@import '~style/helpers';
+
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  &:extend(.align);
+  height: 18%;
+}
+
+.wrapScenario {
+  &:extend(.align);
+  height: 20%;
+}
+
+.btnScenario {
+  @media @sm {
+    transform: scale(1.2);
+  }
+  @media @md {
+    transform: scale(1.4);
+  }
+  @media @lg {
+    transform: scale(1.6);
+  }
+}
+
+.wrapList {
+  height: 62%;
+  .btn {
+    margin-bottom: 1%;
+  }
+}

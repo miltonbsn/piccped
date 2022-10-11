@@ -1,0 +1,51 @@
+@import '~style/helpers';
+
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  &:extend(.align);
+  height: 20%;
+}
+
+.wrap {
+  position: relative;
+  height: 100%;
+}
+
+.content {
+  &:extend(.align);
+  height: 20%;
+  font-size: 14px;
+  line-height: normal;
+  @media @xs {
+    font-size: 17px;
+  }
+}
+
+.nurse {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 60%;
+  left: 0;
+  margin-left: 10px;
+  bottom: 0;
+  margin-bottom: -20px;
+  background: url('../../../assets/svg/nurse.svg') no-repeat;
+  background-size: auto 150%;
+  background-position: center top;
+}
+
+.btn {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  @media @xs {
+    bottom: 5%;
+  }
+}

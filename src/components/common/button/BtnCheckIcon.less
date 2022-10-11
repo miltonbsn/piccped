@@ -1,0 +1,32 @@
+@import '~style/helpers';
+
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btnIcon {
+  &:extend(.align);
+  background: transparent;
+  width: 120px;
+  height: 120px;
+  border: 0;
+  border-radius: 50%;
+  transition: all .3s ease;
+  outline: none;
+  &.touched {
+    background: @pink;
+  }
+  &.checked {
+    background: @green;
+  }
+  @media ( min-width: 400px ) {
+    width: 150px;
+    height: 150px;
+  }
+  img {
+    height: 90%;
+  }
+}

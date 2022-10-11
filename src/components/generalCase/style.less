@@ -1,0 +1,40 @@
+@import '~style/helpers';
+
+.wrapper {
+  height: 100%;
+}
+
+.title {
+  height: 28%;
+  justify-content: center;
+}
+
+.btnPlay {
+  height: 26%;
+  display: flex;
+  align-items: center;
+  @media @sm {
+    transform: scale(1.2);
+  }
+  @media @md {
+    transform: scale(1.4);
+  }
+  @media @lg {
+    transform: scale(1.6);
+  }
+}
+
+.content {
+  height: 46%;
+  overflow: auto;
+  @media @sm {
+    font-size: 16px;
+  }
+  @media @lg {
+    font-size: 20px;
+  }
+  @media @xl {
+    font-size: 22px;
+    padding: 0 10%;
+  }
+}

@@ -1,0 +1,64 @@
+@import '~style/helpers';
+
+.btnPlay {
+  background: transparent;
+  border: 0;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 190px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .icon {
+    position: relative;
+    z-index: 2;
+    width: 90px;
+    z-index: 2;
+    margin-right: -50px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .label {
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    width: 160px;
+    height: 37px;
+    background: white;
+    font-family: @fredoka;
+    color: @pink;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px 10px 60px;
+    border-radius: 20px;
+    transition: all .3s ease;
+    &.active {
+      color: white;
+      width: 100px;
+      animation: played 1s linear infinite alternate;
+    }
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  &.touched {
+    .label {
+      background: @pink;
+      color: white;
+    }
+  }
+}
+
+@keyframes played {
+  from { background-color: @pink; }
+  to { background-color: @purple; }
+}

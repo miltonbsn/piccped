@@ -1,0 +1,130 @@
+@import '~style/helpers';
+
+.wraper {
+  position: absolute;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: rgba(0,0,0,.2);
+  transition: all .3s ease;
+  opacity: 0;
+  visibility: hidden;
+  .alert {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0);
+    transition: all .3s ease;
+    &.correct {
+      background: -moz-linear-gradient(270deg, @purple 0%, rgba(0, 199, 235, .9) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @purple), color-stop(100%, rgba(0, 199, 235, .9)));
+      background: -webkit-linear-gradient(270deg, @purple 0%, rgba(0, 199, 235, .9) 100%);
+      background: -o-linear-gradient(270deg, @purple 0%, rgba(0, 199, 235, .9) 100%);
+      background: -ms-linear-gradient(270deg, @purple 0%, rgba(0, 199, 235, .9) 100%);
+      background: linear-gradient(180deg, @purple 0%, rgba(0, 199, 235, .9) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@purple', endColorstr='rgba(0, 199, 235, .9)',GradientType=0 );
+      .nurse {
+        width: 100%;
+        height: 50%;
+        background: url('../../../assets/svg/nurse.svg') no-repeat;
+        background-size: auto 170%;
+        background-position: center top;
+      }
+    }
+    &.error {
+      background: -moz-linear-gradient(270deg, @pink 0%, rgba(111, 1, 235, .9));
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @pink), color-stop(100%, rgba(111, 1, 235, .9)));
+      background: -webkit-linear-gradient(270deg, @pink 0%, rgba(111, 1, 235, .9));
+      background: -o-linear-gradient(270deg, @pink 0%, rgba(111, 1, 235, .9));
+      background: -ms-linear-gradient(270deg, @pink 0%, rgba(111, 1, 235, .9));
+      background: linear-gradient(180deg, @pink 0%, rgba(111, 1, 235, .9));
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@pink', endColorstr='rgba(111, 1, 235, .9)',GradientType=0 );
+      .nurse {
+        width: 100%;
+        height: 100%;
+        background: url('../../../assets/svg/nurse_sad.svg') no-repeat;
+        background-size: auto 170%;
+        background-position: center top;
+      }
+    }
+  }
+  &.entering,
+  &.entered {
+    opacity: 1;
+    visibility: visible;
+    .alert {
+      transform: scale(1);
+    }
+  }
+}
+
+.title {
+  font-family: @fredoka;
+  font-size: 40px;
+  margin: 0;
+  padding: 0 15px;
+  height: 15%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  margin: 0;
+  height: 35%;
+  padding: 0 15px;
+  font-size: 18px;
+  line-height: 14px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media @xs {
+    line-height: normal;
+  }
+  @media @sm {
+    font-size: 16px;
+  }
+}
+
+.wrapBtn {
+  width: 100%;
+  height: 15%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &.noMessage {
+    height: 40%;
+  }
+}
+
+.wrapImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50%;
+  &.noMessage {
+    height: 60%;
+  }
+  img {
+    min-width: 42%;
+    margin: 4%;
+    &.unique {
+      width: 80%;
+      max-height: 90%;
+      margin: 0;
+    }
+  }
+}

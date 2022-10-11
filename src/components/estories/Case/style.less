@@ -1,0 +1,57 @@
+@import '~style/helpers';
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 25%;
+}
+
+.wrapBtnPlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+.wrapBtnPlayLarge {
+  &:extend(.wrapBtnPlay);
+  height: 25%;
+}
+
+.btnPlay {
+  @media @sm {
+    transform: scale(1.2);
+  }
+  @media @md {    transform: scale(1.4);
+  }
+  @media @lg {
+    transform: scale(1.6);
+  }
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 18px;
+  @media @md {
+    font-size: 20px;
+    line-height: 28px;
+    padding: 0 30px;
+  }
+}
+
+.contentLarge {
+  &:extend(.content);
+  height: 50%;
+}
+
+.btnNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+}

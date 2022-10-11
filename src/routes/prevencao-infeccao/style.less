@@ -1,0 +1,51 @@
+@import '~style/helpers';
+
+.wrapSlide {
+  height: 100%;
+}
+
+.sliderItem {
+  height: 100%;
+  padding: 0 15px 15px;
+}
+
+.case {
+  div {
+    &:first-child {
+      height: 35% !important;
+    }
+    &:nth-child(3) {
+      height: 30% !important;
+    }
+  }
+}
+
+.firstWrapTitle {
+  height: 40%;
+}
+.firstTitle {
+  font-size: 12px;
+  line-height: 13px;
+  @media @sm {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  @media @md {
+    line-height: normal;
+  }
+}
+.firstWrapOptions {
+  height: 40%;
+}
+
+.secondWrapTitle {
+  height: 35%;
+}
+.secondWrapOptions {
+  height: 50%;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  font-size: 14px;
+}

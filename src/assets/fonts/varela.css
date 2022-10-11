@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'VarelaRound-Regular';
+  src: url('VarelaRound-Regular.eot');
+  src: url('VarelaRound-Regular.woff2') format('woff2'),
+       url('VarelaRound-Regular.woff') format('woff'),
+       url('VarelaRound-Regular.ttf') format('truetype'),
+       url('VarelaRound-Regular.svg#VarelaRound-Regular') format('svg'),
+       url('VarelaRound-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

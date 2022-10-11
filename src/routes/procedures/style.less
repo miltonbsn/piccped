@@ -1,0 +1,41 @@
+@import '~style/helpers';
+
+.wrap {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  height: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 24px;
+  @media @sm {
+    font-size: 30px;
+    line-height: normal !important;
+  }
+  small {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: normal !important;
+    @media @sm {
+      font-size: 16px;
+      line-height: 26px !important;
+    }
+  }
+}
+
+.proceduresItems {
+  height: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btnBegin {
+  height: 10%;
+  display: flex;
+  align-items: center;
+}

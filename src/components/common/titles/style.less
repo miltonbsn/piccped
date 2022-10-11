@@ -1,0 +1,105 @@
+@import '~style/helpers';
+
+.iconTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: @fredoka;
+  margin: 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  width: 38px;
+  height: 38px;
+  min-height: 38px;
+  margin-bottom: 5px;
+  border: 3px solid white;
+  border-radius: 50%;
+  @media @lg {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    min-height: 60px;
+  }
+  &.largeIcon {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 19px;
+    @media @xl {
+      border-radius: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.label {
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  @media @lg {
+    font-size: 22px;
+  }
+}
+
+.subtitle {
+  font-family: @varela;
+  font-size: 14px;
+  margin-top: 10px;
+  @media @lg {
+    font-size: 18px;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: @fredoka;
+  font-weight: normal;
+  margin: 0 0 20px;
+}
+
+.titleSm,
+.titleLg,
+.titleQuestion {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  font-family: @fredoka;
+  margin: 0;
+  @media(min-width: 500px) {
+    font-size: 28px;
+  }
+  @media @xl {
+    font-size: 35px;
+    line-height: normal;
+  }
+  .subtitle {
+    display: block;
+    line-height: 16px;
+    @media(min-width: 500px) {
+      font-size: 22px;
+      line-height: normal;
+    }
+  }
+}
+
+.titleQuestion {
+  font-size: 16px;
+  line-height: 16px;
+  @media @xs {
+    line-height: normal;
+  }
+}
+
+.titleLg {
+  font-size: 30px;
+  line-height: normal;
+}

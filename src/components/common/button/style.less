@@ -1,0 +1,144 @@
+@import '~style/helpers';
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  align-content: stretch;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  outline: none;
+  border-radius: 50px;
+  font-family: @fredoka;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: white;
+  margin: 1px auto;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: all .1s;
+  @media @sm {
+    margin: 3px auto;
+    padding: 15px 20px;
+  }
+  @media @lg {
+    margin: 5px auto;
+  }
+
+  &.orange {
+    background: @orange;
+    &.touched {
+      background: @pink;
+    }
+  }
+  &.blue {
+    background: @blue;
+    &.touched {
+      background: @purple;
+    }
+  }
+  &.pink {
+    background: @pink;
+    &.touched {
+      background: @orange;
+    }
+  }
+  &.flat {
+    color: @pink;
+    font-size: 18px;
+    &.touched {
+      background: @pink;
+      color: white;
+    }
+  }
+
+  &.small {
+    height: 26px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 0 15px;
+  }
+  &.large {
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+
+  &.block {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .label {
+    width: auto;
+    margin: 0 auto;
+    .icon {
+      &.right {
+        margin-left: 5px;
+      }
+      &.left {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+// Button icons
+
+.btnIcon {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0 3px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: all .5s ease;
+}
+
+.backLink {
+  &:extend(.btnIcon);
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  &.touched {
+    background: white;
+    color: @pink;
+  }
+}
+
+.IconLink {
+  &:extend(.btnIcon);
+  font-family: @fredoka;
+  min-width: 30px;
+  height: 30px;
+  font-size: 18px;
+  border: 3px solid white;
+  border-radius: 50%;
+  text-transform: uppercase;
+  &.large {
+    border-radius: 15px;
+    padding: 0 5px;
+  }
+  &.touched {
+    border-color: @orange;
+    color: @orange;
+  }
+  span {
+    margin: 0 auto;
+  }
+}
+
+.infoBtn {
+  &:extend(.btnIcon);
+  font-size: 30px;
+  margin: 0 10px;
+  &.touched {
+    color: @orange;
+  }
+}
