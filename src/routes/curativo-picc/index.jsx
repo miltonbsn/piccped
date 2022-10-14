@@ -16,7 +16,7 @@ export default class CurativoPicc extends Component {
 					'Você finalizou este procedimento. Volte ao início para iniciar outro.'
 				],
 				caseTitle: 'Curativo do PICC',
-				caseDescription: 'Durante a avaliação do sítio de inserção do PICC de Arthur, você observou que o curativo, o qual foi realizado com gaze e película transparente no momento da inserção, há 24 horas, encontra-se com sangue envelhecido. Faça sua avaliação clínica e tomada de decisão frente ao exposto.',
+				caseDescription: 'Durante a avaliação do sítio de inserção do PICC de Arthur, você observou que o curativo, o qual foi realizado com membrana transparente semipermeável no momento da inserção, há 24 horas, encontra-se com sangue envelhecido. Faça sua avaliação clínica e tomada de decisão frente ao exposto.',
 				audioGeneralCase: '../../assets/audio/general-case.mp3',
 				audioCase: '../../assets/audio/curativo-picc.mp3',
 				questions: [
@@ -24,10 +24,10 @@ export default class CurativoPicc extends Component {
 						title: 'O que você deve fazer?',
 						list: [
 							{ label: 'Trocar curativo', correct: true, checked: false },
-							{ label: 'Aguardar 48 horas para trocar', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'Infecção de Corrente Sanguínea Relacionada ao Cateter Central (ICSRC)' }
+							{ label: 'Aguardar 48 horas para trocar', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'Infecção de Corrente Sanguínea Relacionada ao Cateter Central (ICSRC). Ao apresentar sujidade o curativo deve ser trocado.' }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
-						correctMessage: 'A recomendação é que a troca seja realizada após 24 horas da inserção. Agora defina os materiais que você irá utilizar.',
+						correctMessage: 'Quando há presença de gaze no curativo, a recomendação é que a troca seja realizada após 48 horas da inserção, quando este encontra-se limpo e íntegro. No entanto, na presença de sujidade ou ruptura da integridade, a troca deve ser realizada imediatamente.',
 						style: {
 							title: style.firstTitle,
 							options: style.firstOptions
@@ -38,7 +38,7 @@ export default class CurativoPicc extends Component {
 						list: [
 							{ label: 'Gaze não-estéril', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'Deve ser mantida técnica asséptica para troca  do curativo.' },
 							{ label: 'Fixador sem sutura', correct: true, checked: false },
-							{ label: 'Película transparente', correct: true, checked: false },
+							{ label: 'Membrana transparente semipermeável', correct: true, checked: false },
 							{ label: 'Pacote de curativo e gaze estéril', correct: true, checked: false },
 							{ label: 'Soro Fisiológico 0,9%', correct: true, checked: false },
 							{ label: 'Clorexidina 0,5%', correct: true, checked: false }
@@ -55,8 +55,8 @@ export default class CurativoPicc extends Component {
 							{ label: 'Higienizar as mãos', correct: true, checked: false },
 							{ label: 'Remover sangue com gaze embebida em soro', correct: true, checked: false },
 							{ label: 'Remover sangue com gaze embebida em Clorexidina', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg'], errorMessage: 'Não é recomendado a remoção do sangue do sítio de inserção com Clorexidina' },
-							{ label: 'Curativo apenas com película transparente', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg', '../../assets/svg/mau_posicionamento.svg'], errorMessage: 'É indicado o uso de fixador sem sutura para auxiliar na estabilização do cateter.' },
-							{ label: 'Curativo com película transparente', correct: true, checked: false },
+							{ label: 'Curativo apenas com membrana transparente semipermeável, sem uso de dispositivo de estabilização do cateter', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg', '../../assets/svg/mau_posicionamento.svg'], errorMessage: 'É indicado o uso de fixador sem sutura para auxiliar na estabilização do cateter.' },
+							{ label: 'Curativo com membrana transparente semipermeável', correct: true, checked: false },
 							{ label: 'Utilizar fixador sem sutura para estabilização do cateter', correct: true, checked: false },
 							{ label: 'Realizar assepsia com gaze embebida em Clorexidina 0,5%', correct: true, checked: false }
 						],

@@ -37,10 +37,10 @@ export default class InspecaoAvaliacao extends Component {
 						}
 					},
 					{ 
-						title: 'Ao identificar alguns sinais locais, como hiperemia e edema, realize sua tomada de decisão',
+						title: 'Ao identificar alguns sinais de possível infecção local, ou seja, no sítio de inserção, como eritema e endurecimento, realize sua tomada de decisão:',
 						list: [
 							{ label: 'Retirar o PICC imediatamente', correct: false, checked: false, errorImage: null, errorMessage: 'Os sinais locais não devem ser utilizados como único indicador de infecção relacionado ao PICC. Faça novamente sua avaliação!' },
-							{ label: 'Manter o PICC se os sinais não estiverem correlacionados a sinais sistêmicos como: febre, taquicardia, hipotensão, taquipneia', correct: true, checked: false }
+							{ label: 'É possível manter o PICC e realizar as intervenções indicadas frente à infecção local, se os sinais não estiverem correlacionados à sinais sistêmicos, como: febre, taquicardia, hipotensão ou taquipneia', correct: true, checked: false }
 						],
 						scenario: '../../assets/scenarios/cenario_inflamacao.png',
 						correctMessage: 'A infecção local raramente está relacionada a ICSRC. Recomenda-se avaliar continuamente a evolução dos sinais locais e atentar para presença de sinais sistêmicos.',

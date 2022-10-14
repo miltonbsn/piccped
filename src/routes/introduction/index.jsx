@@ -109,7 +109,7 @@ export default class Introduction extends Component {
 							<div class={style.wrapFirstSlide}>
 								<Welcome class={style.welcome} />
 								<div class={style.description}>
-									<p>O PICCPED tem como objetivo lhe auxiliar no raciocínio clínico e tomada de decisão para prevenção de eventos adversos na manutenção do Cateter Central de Inserção Periférica (PICC) na população pediátrica.</p>
+									<p>O PICCPED tem como objetivo lhe auxiliar no raciocínio clínico e tomada de decisão para prevenção de eventos adversos na manutenção do Cateter Central de Inserção Periférica (PICC) na população pediátrica e neonatal.</p>
 								</div>
 							</div>
 						</div>
