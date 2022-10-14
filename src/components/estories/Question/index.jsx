@@ -5,21 +5,43 @@ import BtnCheck from '../../common/button/BtnCheck'
 import * as utils from '../../common/utils'
 import global from '../style.less'
 import style from './style.less'
+import { BtnPicc } from '../../common/button/button'
 
 export default class Question extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      questions: this.props.list
+    };
 
     this.selectItem = this.selectItem.bind(this)
+    this.verifyQuestions = this.verifyQuestions.bind(this)
+  }
+
+  verifyQuestions() {
+    const { questions } = this.state;
+
+    if (questions.some(question => question.correct && !question.checked)) {
+      this.props.showErrorMissingCorrect();
+    }
+
+    if (questions.every(question => (question.correct && question.checked) || (!question.correct && !question.checked))) {
+      this.props.nextQuestion();
+    }
+  }
+
+  hasOnlyOneCorrect(list) {
+    return list.filter(question => question.correct).length === 1;
   }
 
   selectItem(i) {
     const changeState = utils.chooseItem(i, this.props.list)
     const newState = changeState.items
-    this.setState({ newState })
+    this.setState({ questions: newState })
     this.props.action()
     
-    if ( changeState.valid ){
+    console.log(newState);
+    if (this.hasOnlyOneCorrect(this.props.list) && changeState.valid) {
       this.props.nextQuestion()
     } else {
       this.props.errorQuestion(i)
@@ -45,6 +67,10 @@ export default class Question extends Component {
             <BtnCheck key={i} class={[style.btn, this.props.style.options].join(' ')} label={item.label} checked={item.checked} action={ () => this.selectItem(i) }/>
           ) }
         </div>
+
+        {!this.hasOnlyOneCorrect(this.props.list) && (
+          <BtnPicc label="Avançar" color="orange" icon="arrow-right" right style="width: 220px;" action={ this.verifyQuestions } />
+        )}
       </div>
     )
   }

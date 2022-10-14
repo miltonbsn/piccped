@@ -35,6 +35,7 @@ export default class CurativoPicc extends Component {
 					},
 					{ 
 						title: 'Selecione os materiais necessários para troca do curativo do PICC',
+						missingCorrectMessage: 'Falta (m) material (is) para realização da troca do curativo visando prevenir eventos adversos, retorne e realize novamente sua avaliação',
 						list: [
 							{ label: 'Gaze não-estéril', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'Deve ser mantida técnica asséptica para troca  do curativo.' },
 							{ label: 'Fixador sem sutura', correct: true, checked: false },
@@ -51,6 +52,7 @@ export default class CurativoPicc extends Component {
 					},
 					{
 						title: 'Selecione os passos a serem realizados na troca do curativo',
+						missingCorrectMessage: 'Falta (m) algum (ns) passo (s) para realização da troca do curativo visando prevenir eventos adversos, retorne e realize novamente sua avaliação',
 						list: [
 							{ label: 'Higienizar as mãos', correct: true, checked: false },
 							{ label: 'Remover sangue com gaze embebida em soro', correct: true, checked: false },

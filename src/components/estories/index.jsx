@@ -79,6 +79,7 @@ export default class Stories extends Component {
 		this.showErrorAlertSequence = this.showErrorAlertSequence.bind(this)
 		this.selectSequence = this.selectSequence.bind(this)
 		this.showErrorAlertChooseQuestion = this.showErrorAlertChooseQuestion.bind(this)
+		this.showErrorMissingCorrect = this.showErrorMissingCorrect.bind(this);
 	}
 
 	componentWillMount() {
@@ -139,6 +140,17 @@ export default class Stories extends Component {
 		this.setState({ showCorrectAlert: false })
 		this.next()
 	}
+
+	showErrorMissingCorrect(message = 'Falta (m) item (ns) para uma tomada de decisão adequada, retorne e realize novamente sua avaliação.') {
+		this.setState({
+			showErrorAlert: {
+				show: true,
+				errorImage: ['../../assets/svg/nurse_sad.svg'],
+				errorMessage: message
+			}
+		});
+	}
+
 	showErrorAlert(i) {
 		let currentAsk = this.props.questions[this.state.currentQuestion].list[i]
 		let message = currentAsk.errorMessage
@@ -275,7 +287,9 @@ export default class Stories extends Component {
 									openScenario={ () => this.showPopup('S', item.scenario) }
 									nextQuestion={ () => this.showCorrectAlert(item.correctMessage) }
 									action={ () => this.updateCurrentQuestion(i) }
-									errorQuestion={ this.showErrorAlert } />
+									errorQuestion={ this.showErrorAlert } 
+									showErrorMissingCorrect={() => this.showErrorMissingCorrect(item.missingCorrectMessage)}	
+								/>
               </div>
             ) : null }
 

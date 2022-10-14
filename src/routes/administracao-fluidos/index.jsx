@@ -20,6 +20,7 @@ export default class AdministracaoFluidos extends Component {
 			questions: [
 				{
 					title: 'Para garantir a administração de fluidos no PICC de forma segura você deve levar em consideração alguns conhecimentos teóricos, aponte qual/quais você buscaria para sua avaliação clínica e tomada de decisão.',
+					missingCorrectMessage: 'Falta (m) algum (ns) fator (es) que favorece (em) a segurança na administração de medicamentos e fluidos, retorne e realize novamente sua avaliação',
 					list: [
 						{ label: 'Reconhecer fármacos vesicantes, não-vesicantes e soluções irritantes', correct: true, checked: false },
 						{ label: 'Checar a compatibilidade e caraterística dos fármacos', correct: true, checked: false },
@@ -34,6 +35,7 @@ export default class AdministracaoFluidos extends Component {
 				},
 				{ 
 					title: 'Agora, faça sua avaliação clínica e tomada de decisão quanto a administração dos medicamentos prescritos',
+					missingCorrectMessage: 'Falta (m) algum (ns) fator (es) que favorece (em) a segurança na administração de medicamentos e fluidos, retorne e realize novamente sua avaliação',
 					list: [
 						{ label: 'Não é necessário administração em bomba de infusão', correct: false, checked: false, errorImage: ['../../assets/svg/obstrucao.svg'], errorMessage: 'É altamente recomendado  uso de bomba de infusão na administração de fluidos no PICC.' },
 						{ label: 'Realizar a avaliação e inspeção do local de inserção e da permeabilidade do cateter antes de administrar o medicamento', correct: true, checked: false },
