@@ -15,15 +15,15 @@ export default class PosicionamentoAdequado extends Component {
 					'Você finalizou este procedimento. Volte ao início para iniciar outro.'
 				],
 				caseTitle: 'Posicionamento Adequado',
-				caseDescription: 'Durante a troca do curativo você atentou-se aos aspectos relacionados ao posicionamento adequado. Dê sequência a sua avaliação e realize sua tomada de decisão em relação ao posicionamento adequado após a troca do curativo.',
+				caseDescription: 'Durante a troca do curativo você atentou-se aos aspectos relacionados ao posicionamento adequado do PICC. Dê sequência a sua avaliação e realize sua tomada de decisão em relação ao posicionamento adequado após a troca do curativo.',
 				audioGeneralCase: '../../assets/audio/general-case.mp3',
 				audioCase: '../../assets/audio/posicionamento-adequado.mp3',
 				questions: [
 					{
 						title: 'Observe o PICC de Arthur e identifique os fatores que previnem um posicionamento inadequado da ponta do cateter',
 						list: [
-							{ label: 'Inserção do PICC acima da zona flexora', correct: true, checked: false },
-							{ label: 'Curativo com película transparente bem aderida', correct: true, checked: false },
+							{ label: 'Inserção do PICC acima da zona flexora do membro', correct: true, checked: false },
+							{ label: 'Curativo com membrana transparente semipermeável', correct: true, checked: false },
 							{ label: 'Curativo íntegro', correct: true, checked: false },
 							{ label: 'Estabilização do cateter com o fixador sem sutura', correct: true, checked: false }
 						],
@@ -41,7 +41,7 @@ export default class PosicionamentoAdequado extends Component {
 							{ label: 'Manter a exteriorização do cateter e monitorar o posicionamento de sua ponta', correct: true, checked: false }
 						],
 						scenario: '../../assets/scenarios/cenario_exterior.png',
-						correctMessage: 'A recomendação é que a troca seja realizada após 24 horas da inserção. Agora defina os materiais que você irá utilizar.',
+						correctMessage: 'Correto! Após a finalização do procedimento de inserção do PICC, o cateter nunca deve ser reinserido.  Em caso de exteriorização, deve-se realizar o monitoramento da sua ponta criteriosamente para evitar eventos adversos.',
 						errorMessage: 'Nenhum antisséptico ou técnica aplicada tornará a pele ou cateter estéril!',
 						style: {
 							title: style.secondTitle,

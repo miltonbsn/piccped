@@ -95,24 +95,6 @@ export default class PrevencaoInfeccao extends Component {
 					correctMessage: 'Você selecionou a opção correta!'
 				},
 				{
-					title: 'Agora em relação ao intervalo de troca de fluidos, aponte:',
-					subtitle: 'Soluções contendo lipideos e emulsões lipídicas / Infusão de drogas',
-					list: [
-						{ label: '12 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
-						{ label: '24 horas', correct: true, checked: false },
-						{ label: '48 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
-						{ label: '72 Horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
-						{ label: 'até 96 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] }
-					],
-					scenario: '../../assets/scenarios/cenario-prevencao-infeccao-3.jpeg',
-					style: {
-						wrapTitle: style.secondWrapTitle,
-						wrapOptions: style.secondWrapOptions,
-						subTitle: style.subtitle
-					}, 
-					correctMessage: 'Você selecionou a opção correta!'
-				},
-				{
 					title: 'Agora selecione o intervalo de troca dos equipos e conectores caso haja a transfusão de concentrado de hemácias em 4 horas:',
 					subtitle: 'Todos os componentes sanguíneos para infusão contínua',
 					list: [
