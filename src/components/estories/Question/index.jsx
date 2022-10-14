@@ -40,7 +40,6 @@ export default class Question extends Component {
     this.setState({ questions: newState })
     this.props.action()
     
-    console.log(newState);
     if (this.hasOnlyOneCorrect(this.props.list) && changeState.valid) {
       this.props.nextQuestion()
     } else {
