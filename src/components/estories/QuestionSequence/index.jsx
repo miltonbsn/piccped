@@ -18,7 +18,7 @@ export default class QuestionSequence extends Component {
 
         <div class={ style.wrapIcons }>
           { this.props.list.map( (item, i) => 
-            <BtnCheckIcon icon={ item.icon } action={ () => this.props.select(i) } checked={ item.checked } />
+            <BtnCheckIcon icon={ item.icon } label={item.label} action={ () => this.props.select(i) } checked={ item.checked } />
           )}
         </div>
       </div>

@@ -117,10 +117,10 @@ export default class PrevencaoInfeccao extends Component {
 				{
 					title: 'Você realizará a permeabilização do cateter. Clique nos objetos para apontar os passos corretos para o procedimento.',
 					list: [
-						{ sequence: 2, checked: false, icon: '../../assets/svg/icons_bandeja.svg', video: '../../assets/videos/question-video-bandeja.mp4', cover: '../../assets/videos/question-video-bandeja-cover.png' },
-						{ sequence: 3, checked: false, icon: '../../assets/svg/icons_alcool.svg', video: '../../assets/videos/question-video-alcool.mp4', cover: '../../assets/videos/question-video-alcool-cover.png' },
-						{ sequence: 1, checked: false, icon: '../../assets/svg/icons_pia.svg', video: '../../assets/videos/question-video-pia.mp4', cover: '../../assets/videos/question-video-pia-cover.png' },
-						{ sequence: 4, checked: false, icon: '../../assets/svg/icons_luva.svg', video: '../../assets/videos/question-video-luva.mp4', cover: '../../assets/videos/question-video-luva-cover.png' },
+						{ sequence: 2, checked: false, label: 'Preparar os materiais e levar ao leito', icon: '../../assets/svg/icons_bandeja.svg', video: '../../assets/videos/question-video-bandeja.mp4', cover: '../../assets/videos/question-video-bandeja-cover.png' },
+						{ sequence: 3, checked: false, label: 'Higienizar as mãos com álcool 70%', icon: '../../assets/svg/icons_alcool.svg', video: '../../assets/videos/question-video-alcool.mp4', cover: '../../assets/videos/question-video-alcool-cover.png' },
+						{ sequence: 1, checked: false, label: 'Lavagem das mãos', icon: '../../assets/svg/icons_pia.svg', video: '../../assets/videos/question-video-pia.mp4', cover: '../../assets/videos/question-video-pia-cover.png' },
+						{ sequence: 4, checked: false, label: 'Calçar luvas não-estéreis', icon: '../../assets/svg/icons_luva.svg', video: '../../assets/videos/question-video-luva.mp4', cover: '../../assets/videos/question-video-luva-cover.png' },
 					],
 					videoFinal: { video: '../../assets/videos/question-video-flush.mp4', cover: '../../assets/videos/question-video-flush-cover.png' },
 					style: {}

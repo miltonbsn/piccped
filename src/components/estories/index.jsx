@@ -217,11 +217,9 @@ export default class Stories extends Component {
 				questions.sequence = sequence
 
         this.setState({ questionsSequence: questions })
-
-        this.playVideo(this.state.questionsSequence.questions[item].video)
         
         if ( sequence == this.state.questionsSequence.totalSequence ) {
-					this.setState({ playVideoFinalSequence: true })
+					this.showCorrectAlert();
         }
       } else {
         this.showErrorAlertSequence('Selecione os itens na sequência correta')
