@@ -30,19 +30,14 @@ export default class Question extends Component {
     }
   }
 
-  hasOnlyOneCorrect(list) {
-    return list.filter(question => question.correct).length === 1;
-  }
 
   selectItem(i) {
     const changeState = utils.chooseItem(i, this.props.list)
     const newState = changeState.items
     this.setState({ questions: newState })
     this.props.action()
-    
-    if (this.hasOnlyOneCorrect(this.props.list) && changeState.valid) {
-      this.props.nextQuestion()
-    } else {
+  
+    if (!changeState.valid) {
       this.props.errorQuestion(i)
     }
   }
@@ -67,9 +62,7 @@ export default class Question extends Component {
           ) }
         </div>
 
-        {!this.hasOnlyOneCorrect(this.props.list) && (
-          <BtnPicc label="Avançar" color="orange" icon="arrow-right" right style="width: 220px;" action={ this.verifyQuestions } />
-        )}
+        <BtnPicc label="Avançar" color="orange" icon="arrow-right" right style="width: 220px;" action={ this.verifyQuestions } />
       </div>
     )
   }

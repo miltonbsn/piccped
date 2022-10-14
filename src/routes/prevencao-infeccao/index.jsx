@@ -21,7 +21,7 @@ export default class PrevencaoInfeccao extends Component {
 			questions: [
 				{
 					subtitle: 'Novo acesso venoso',
-					title: 'Imediatamente antes de passar o PICC, Arthur possuía um acesso venoso periférico. Ao realizar a passagem do PICC e detectar um posicionamento adequado, o enfermeiro orientou que a infusão do medicamento que estava ocorrendo no acesso venoso periférico passasse a ser administrada no cateter central. Avalie quando deve ocorrer a troca da solução, equipo e conexões neste caso.',
+					title: 'Imediatamente antes do PICC ser inserido, Arthur possuía um acesso venoso periférico. Ao realizar a passagem do PICC e detectar um posicionamento adequado, o enfermeiro orientou que a infusão do medicamento que estava ocorrendo no acesso venoso periférico passasse a ser administrada no cateter central. Avalie quando deve ocorrer a troca da solução, equipo e conexões neste caso.',
 					list: [
 						{ label: 'Imediatamente', correct: true, checked: false },
 						{ label: '12 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
@@ -39,7 +39,7 @@ export default class PrevencaoInfeccao extends Component {
 					}
 				},
 				{
-					title: 'Agora faça sua avaliação em relação ao intervalo de troca de conectores e hubs.',
+					title: 'Agora faça sua avaliação em relação ao intervalo de troca de conectores, quando não há infusão de lipídeos, componentes sanguíneos ou derivados.',
 					subtitle: 'Conectores e hubs',
 					list: [
 						{ label: '12 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
@@ -60,7 +60,7 @@ export default class PrevencaoInfeccao extends Component {
 				},
 				{
 					title: 'Faça sua avaliação em relação ao intervalo de troca do equipo de acordo com cada solução administrada',
-					subtitle: 'Solução que não contém lipídeo, sangue ou derivados',
+					subtitle: 'Solução que não contém lipídeo, componentes sanguíneos ou derivados',
 					list: [
 						{ label: '12 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
 						{ label: '24 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
@@ -78,7 +78,7 @@ export default class PrevencaoInfeccao extends Component {
 				},
 				{
 					title: 'Agora faça sua avaliação em relação ao intervalo de troca do equipo de acordo com cada solução administrada',
-					subtitle: '- Solução contém lipídeo/ nutrição parenteral com lipídeo - Heparina',
+					subtitle: 'Solução contém lipídeo/nutrição parenteral com lipídeo - Heparina',
 					list: [
 						{ label: '12 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
 						{ label: '24 horas', correct: true, checked: false },
