@@ -21,6 +21,7 @@ export default class PosicionamentoAdequado extends Component {
 				questions: [
 					{
 						title: 'Observe o PICC de Arthur e identifique os fatores que previnem um posicionamento inadequado da ponta do cateter',
+						missingCorrectMessage: 'Falta (m) algum (ns) fator (es) que previnem um posicionamento inadequado da ponta do cateter, retorne e realize novamente sua avaliação',
 						list: [
 							{ label: 'Inserção do PICC acima da zona flexora do membro', correct: true, checked: false },
 							{ label: 'Curativo com membrana transparente semipermeável', correct: true, checked: false },

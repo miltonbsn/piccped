@@ -21,6 +21,7 @@ export default class ManutencaoPermeabilidade extends Component {
 			questions: [
 				{
 					title: 'Observe o PICC de Arthur e identifique os fatores que favorecem a manutenção da permeabilidade do cateter',
+					missingCorrectMessage: 'Falta (m) algum (ns) fator (es) que favorece (em) a permeabilidade do cateter, retorne e realize novamente sua avaliação',
 					list: [
 						{ label: 'Realizar flushing com SF 0,9% e lock', correct: true, checked: false },
 						{ label: 'A substância  utilizada deve ser Heparina', correct: false, checked: false, errorMessage: 'Não é recomendado uso de heparina de rotina, apenas se houver indicação.' },
@@ -36,6 +37,7 @@ export default class ManutencaoPermeabilidade extends Component {
 				},
 				{ 
 					title: 'Observe o PICC de Arthur e identifique os fatores que favorecem a manutenção da permeabilidade do cateter. Considere que não há infusão contínua no PICC, apenas uso de antibiótico intermitente',
+					missingCorrectMessage: 'Falta (m) algum (ns) fator (es) que favorece (em) a permeabilidade do cateter, retorne e realize novamente sua avaliação',
 					list: [
 						{ label: 'O flushing e lock devem ser realizados a cada 6 hs ou de acordo com protocolo institucional', correct: true, checked: false },
 						{ label: 'O flushing deve ser realizado ao início e ao término de cada medicação', correct: true, checked: false },

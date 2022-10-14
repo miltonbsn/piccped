@@ -18,10 +18,6 @@ export default class Case extends Component {
           <TitleSm label={this.props.title}/>
         </div>
 
-        <div class={ this.props.noAction ? style.wrapBtnPlayLarge : style.wrapBtnPlay}>
-          <BtnPlay icon="../../../assets/svg/headNurse.svg" label="Ouvir" class={style.btnPlay} play={ () => this.props.play() }/>
-        </div>
-
         <div class={ this.props.noAction ? style.contentLarge : style.content }>
           <span>
             <p>{this.props.description}</p>
