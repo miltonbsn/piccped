@@ -23,10 +23,15 @@ export default class BtnCheckIcon extends Component {
   }
 
   render () {
+    const { label, icon, checked, action } = this.props;
+
     return (
-      <button class={ this.state.buttonClass.concat([ this.props.checked ? style.checked : null ]).join(' ') } onClick={this.props.action} onTouchStart={ () => this.enterBtn() } onTouchEnd={ () => this.leaveBtn() }>
-        <img src={ this.props.icon }/>
-      </button>
+      <div class={style.align}>
+        <button class={this.state.buttonClass.concat([ checked ? style.checked : null ]).join(' ')} onClick={action} onTouchStart={() => this.enterBtn()} onTouchEnd={() => this.leaveBtn()}>
+          <img src={icon} />
+        </button>
+        <span class={style.iconLabel}>{label}</span>
+      </div>
     )
   }
 }
