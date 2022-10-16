@@ -55,7 +55,7 @@ export default class Video extends Component {
             : null }
             
             <div class={ style.wrapVideo }>
-              <video id="videoPopup" class={ this.props.isScenario ? [style.video, style.scenario].join(' ') : style.video } src={ this.state.mp4 } loop={ this.state.loop } muted></video>
+              <video controls id="videoPopup" class={ this.props.isScenario ? [style.video, style.scenario].join(' ') : style.video } src={ this.state.mp4 } loop={ this.state.loop } muted></video>
             </div>
           </div>
         )}
