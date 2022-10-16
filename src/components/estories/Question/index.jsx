@@ -37,7 +37,9 @@ export default class Question extends Component {
     this.setState({ questions: newState })
     this.props.action()
   
-    if (!changeState.valid) {
+    if (changeState.valid) {
+      this.props.nextQuestion();
+    } else {
       this.props.errorQuestion(i)
     }
   }
