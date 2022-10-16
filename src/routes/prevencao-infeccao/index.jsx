@@ -98,8 +98,8 @@ export default class PrevencaoInfeccao extends Component {
 					title: 'Agora selecione o intervalo de troca dos equipos e conectores caso haja a transfusão de concentrado de hemácias em 4 horas:',
 					subtitle: 'Todos os componentes sanguíneos para infusão contínua',
 					list: [
-						{ label: 'dentro de 4 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
-						{ label: '24 horas', correct: true, checked: false },
+						{ label: 'dentro de 4 horas', correct: true, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
+						{ label: '24 horas', correct: false, checked: false },
 						{ label: '48 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
 						{ label: '72 Horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
 						{ label: 'até 96 horas', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] }
