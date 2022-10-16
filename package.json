@@ -7,9 +7,13 @@
   "scripts": {
     "test": "eslint src && preact test",
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
+    "build": "preact build && preact serve",
     "serve": "preact build && preact serve",
     "dev": "preact watch"
+  },
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
   },
   "keywords": [],
   "author": "",
