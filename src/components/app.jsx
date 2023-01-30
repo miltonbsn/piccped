@@ -16,10 +16,12 @@ import definitionPTBR from '../translations/pt-BR.json';
 import definitionEN from '../translations/en.json';
 
 const getI18n = () => {
-	const languageByLocalStorage = localStorage.getItem("i18n"); 
-	if (languageByLocalStorage) return languageByLocalStorage;
-	localStorage.setItem('i18n', 'pt-BR');
-	return 'pt-BR';
+	if (typeof window !== "undefined") {
+		const languageByLocalStorage = localStorage.getItem("i18n"); 
+		if (languageByLocalStorage) return languageByLocalStorage;
+		localStorage.setItem('i18n', 'pt-BR');
+		return 'pt-BR';
+	}
 };
 export default class App extends Component {
 	/** Gets fired when the route changes.
