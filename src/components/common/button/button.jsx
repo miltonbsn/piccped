@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import TextComponent from '../text/Text';
 import style from './style.less'
 
 export class BtnPicc extends Component {
@@ -45,7 +46,7 @@ export class BtnPicc extends Component {
         <span class={style.label}>
           { this.props.icon && this.props.left ?
             <i className={`${style.icon} fa fa-${this.props.icon} ${this.props.left ? style.left : null}`}></i> :   null }
-          { this.props.label }
+          <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
           { this.props.icon && this.props.right ?
             <i className={`${style.icon} fa fa-${this.props.icon} ${this.props.right ? style.right : null}`}></i> : null }
         </span>
@@ -125,7 +126,9 @@ export class IconLink extends Component {
         onTouchStart={ () => this.enterBtn() }
         onTouchEnd={ () => this.leaveBtn() }
         onClick={ this.props.action }>
-          <span>{ this.props.label }</span>
+          <span>
+            <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
+          </span>
       </button>
     )
   }

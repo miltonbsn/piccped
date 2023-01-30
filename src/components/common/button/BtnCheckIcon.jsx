@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import TextComponent from '../text/Text'
 import style from './BtnCheckIcon.less'
 
 export default class BtnCheckIcon extends Component {
@@ -30,7 +31,9 @@ export default class BtnCheckIcon extends Component {
         <button class={this.state.buttonClass.concat([ checked ? style.checked : null ]).join(' ')} onClick={action} onTouchStart={() => this.enterBtn()} onTouchEnd={() => this.leaveBtn()}>
           <img src={icon} />
         </button>
-        <span class={style.iconLabel}>{label}</span>
+        <span class={style.iconLabel}>
+          <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
+        </span>
       </div>
     )
   }

@@ -4,6 +4,7 @@ import BtnPlay from '../../common/button/BtnPlay'
 import { BtnPicc } from '../../common/button/button'
 import global from '../style.less'
 import style from './style.less'
+import TextComponent from '../../common/text/Text'
 
 export default class Case extends Component {
   constructor(props) {
@@ -20,13 +21,13 @@ export default class Case extends Component {
 
         <div class={ this.props.noAction ? style.contentLarge : style.content }>
           <span>
-            <p>{this.props.description}</p>
+            <p><TextComponent id={this.props.description}>{this.props.description}</TextComponent></p>
           </span>
         </div>
 
         { !this.props.noAction ?
           <div class={style.btnNext}>
-            <BtnPicc label="Próximo" color="pink" icon="arrow-right" right action={ this.props.nextSlider } />
+            <BtnPicc label="Next" color="pink" icon="arrow-right" right action={ this.props.nextSlider } />
           </div>
         : null }
       </div>

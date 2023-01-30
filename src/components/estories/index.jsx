@@ -141,7 +141,7 @@ export default class Stories extends Component {
 		this.next()
 	}
 
-	showErrorMissingCorrect(message = 'Falta (m) item (ns) para uma tomada de decisão adequada, retorne e realize novamente sua avaliação.') {
+	showErrorMissingCorrect(message = 'missingItemsMessage') {
 		this.setState({
 			showErrorAlert: {
 				show: true,
@@ -222,7 +222,7 @@ export default class Stories extends Component {
 					this.showCorrectAlert();
         }
       } else {
-        this.showErrorAlertSequence('Selecione os itens na sequência correta')
+        this.showErrorAlertSequence('selectRightSequence')
 			}
     }
   }
@@ -265,8 +265,8 @@ export default class Stories extends Component {
 							<div class="slider-item" key={i}>
 								<ChooseQuestion { ...item }
 									playVideo={ this.playVideo }
-									errorQuestion={ () => this.showErrorAlertChooseQuestion('A desconexão do sistema de infusão não deve ser realizada intermitentemente, se este sistema de infusão for aberto e desconectado o conjunto deverá ser trocado e um novo sistema de infusão deve ser inserido.') }
-									nextQuestion={ () => this.showCorrectAlert('Parabéns, você preveniu que a ICSRC atingisse Arthur!') }
+									errorQuestion={ () => this.showErrorAlertChooseQuestion('electrolyteReplacementQuestionErrorMessage') }
+									nextQuestion={ () => this.showCorrectAlert('electrolyteReplacementQuestionCorrectMessage') }
 									playVideo={ this.playVideo }
 									action={ () => this.updateCurrentQuestion(i) } />
 							</div>
@@ -297,7 +297,7 @@ export default class Stories extends Component {
 									<div class={style.sliderText}>
 										<TitleQuestion label={this.props.sliderText} class={style.title} />
 
-										<BtnPicc label="Próximo" color="pink" icon="arrow-right" right action={ () => this.next() } />
+										<BtnPicc label="Next" color="pink" icon="arrow-right" right action={ () => this.next() } />
 									</div>
 								</div>
 							</div>

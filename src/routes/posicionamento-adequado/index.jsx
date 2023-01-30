@@ -9,24 +9,24 @@ export default class PosicionamentoAdequado extends Component {
 		this.state = {
 			data: {
 				instructions: [
-					'Leia o caso clínico para prosseguir.',
-					'Clique na intervenção que você julga correta',
-					'Clique na intervenção que você julga correta',
-					'Você finalizou este procedimento. Volte ao início para iniciar outro.'
+					'readTheClinicalCase',
+					'clickOnTheIntervention',
+					'clickOnTheIntervention',
+					'finishedProcedure'
 				],
-				caseTitle: 'Posicionamento Adequado',
-				caseDescription: 'Durante a troca do curativo você atentou-se aos aspectos relacionados ao posicionamento adequado do PICC. Dê sequência a sua avaliação e realize sua tomada de decisão em relação ao posicionamento adequado após a troca do curativo.',
+				caseTitle: 'Posicionamento adequado',
+				caseDescription: 'correctPositioningCaseDescription',
 				audioGeneralCase: '../../assets/audio/general-case.mp3',
 				audioCase: '../../assets/audio/posicionamento-adequado.mp3',
 				questions: [
 					{
-						title: 'Observe o PICC de Arthur e identifique os fatores que previnem um posicionamento inadequado da ponta do cateter',
-						missingCorrectMessage: 'Falta (m) algum (ns) fator (es) que previnem um posicionamento inadequado da ponta do cateter, retorne e realize novamente sua avaliação',
+						title: 'correctPositioningTitle',
+						missingCorrectMessage: 'correctPositioningMissingCorrectMessage',
 						list: [
-							{ label: 'Inserção do PICC acima da zona flexora do membro', correct: true, checked: false },
-							{ label: 'Curativo com membrana transparente semipermeável', correct: true, checked: false },
-							{ label: 'Curativo íntegro', correct: true, checked: false },
-							{ label: 'Estabilização do cateter com o fixador sem sutura', correct: true, checked: false }
+							{ label: 'insertionOfThePicc', correct: true, checked: false },
+							{ label: 'dressingWithTransparentMembrane', correct: true, checked: false },
+							{ label: 'dressingIntegrity', correct: true, checked: false },
+							{ label: 'catheterStabilization', correct: true, checked: false }
 						],
 						scenario: '../../assets/videos/scenario-posicionamento-adequado.mp4',
 						coverScenario: '../../assets/scenarios/cover-scenario-posicionamento-adequado.png',
@@ -36,14 +36,14 @@ export default class PosicionamentoAdequado extends Component {
 						}
 					},
 					{ 
-						title: 'Em caso de exteriorização acidental do cateter, realize sua avaliação e tomada de decisão:',
+						title: 'accidentalExteriorizationTitle',
 						list: [
-							{ label: 'Realizar a assepsia da pele e do cateter e reinserir a parte exteriorizada', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg', '../../assets/svg/infeccao.svg'], errorMessage: 'Nenhum antisséptico ou técnica aplicada  tornará a pele ou cateter estéril.' },
-							{ label: 'Manter a exteriorização do cateter e monitorar o posicionamento de sua ponta', correct: true, checked: false }
+							{ label: 'performSkinAndCatheter', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg', '../../assets/svg/infeccao.svg'], errorMessage: 'accidentalExteriorizationErrorMessage' },
+							{ label: 'maintainTheCatheterExteriorization', correct: true, checked: false }
 						],
 						scenario: '../../assets/scenarios/cenario_exterior.png',
-						correctMessage: 'Correto! Após a finalização do procedimento de inserção do PICC, o cateter nunca deve ser reinserido.  Em caso de exteriorização, deve-se realizar o monitoramento da sua ponta criteriosamente para evitar eventos adversos.',
-						errorMessage: 'Nenhum antisséptico ou técnica aplicada tornará a pele ou cateter estéril!',
+						correctMessage: 'accidentalExteriorizationCorrectMessage',
+						errorMessage: 'accidentalExteriorizationErrorMessage',
 						style: {
 							title: style.secondTitle,
 							options: style.secondOptions

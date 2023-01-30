@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import TextComponent from '../text/Text'
 import style from './BtnScenario.less'
 
 export default class BtnScenario extends Component {
@@ -27,7 +28,7 @@ export default class BtnScenario extends Component {
         <span class={ style.icon } style={`background-image: url('${this.props.icon}')`}></span>
         <span class={ style.label }>
           <i class="fa fa-expand"></i>
-          { this.props.label }
+          <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
         </span>
       </button>
     )

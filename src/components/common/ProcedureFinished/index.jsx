@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import style from './style.less'
 import { TitleLg } from '../titles/IconTitle'
 import { BtnPicc } from '../button/button'
+import TextComponent from '../text/Text'
 
 export default class ProcedureFinished extends Component {
   constructor(props) {
@@ -12,17 +13,17 @@ export default class ProcedureFinished extends Component {
     return(
       <div class={style.wrap}>
         <div class={style.title}>
-          <TitleLg label="Procedimento finalizado!"/>
+          <TitleLg label="wellDone"/>
         </div>
 
         <div class={style.content}>
-          Você chegou ao final deste procedimento. Volte para o início e continue promovendo a segurança do paciente em outro procedimento.
+          <TextComponent id="endOfProcedure" />
         </div>
-
+  
         <div class={style.nurse}></div>
 
         <div class={style.btn}>
-          <BtnPicc label="Procedimentos" color="pink"  icon="arrow-left" left action={ this.props.action } />
+          <BtnPicc label="backToProcedures" color="pink"  icon="arrow-left" left action={ this.props.action } />
         </div>
       </div>
     )
