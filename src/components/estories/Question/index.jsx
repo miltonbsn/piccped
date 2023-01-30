@@ -64,7 +64,7 @@ export default class Question extends Component {
           ) }
         </div>
 
-        <BtnPicc label="Avançar" color="orange" icon="arrow-right" right style="width: 220px;" action={ this.verifyQuestions } />
+        <BtnPicc label="Next" color="orange" icon="arrow-right" right style="width: 220px;" action={ this.verifyQuestions } />
       </div>
     )
   }

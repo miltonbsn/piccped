@@ -15,7 +15,7 @@ export default class Procedures extends Component {
 				{ label: 'Avaliação do local de inserção', url: '/inspecao-avaliacao' },
 				{ label: 'Curativo do PICC', url: '/curativo-picc' },
 				{ label: 'Posicionamento adequado', url: '/posicionamento-adequado' },
-				{ label: 'Manutenção de permeabilidade', url: '/manutencao-permeabilidade' },
+				{ label: 'Manutenção da permeabilidade', url: '/manutencao-permeabilidade' },
 				{ label: 'Administração de fluidos', url: '/administracao-fluidos' },
 				{ label: 'Prevenção de infecção', url: '/prevencao-infeccao' }
 			]
@@ -32,7 +32,7 @@ export default class Procedures extends Component {
 		return (
 			<Container>
 				<div class={style.wrap}>
-					<TitleSm label="Procedimentos de manutenção" subtitle="Escolha por qual procedimento de manutenção do PICC você deseja iniciar" class={style.title}/>
+					<TitleSm label="Procedimentos de manutenção" subtitle="maintenanceProceduresSubtitle" class={style.title}/>
 
 					<div class={style.proceduresItems}>
 						{ this.state.procedures.map( (item, i) =>

@@ -13,6 +13,7 @@ import Definitions from '../../components/definitions'
 import Preventions from '../../components/preventions'
 import GeneralCase from '../../components/generalCase'
 import Player from '../../components/common/audio'
+import TextComponent from '../../components/common/text/Text'
 
 export default class Introduction extends Component {
 	constructor(props) {
@@ -109,7 +110,7 @@ export default class Introduction extends Component {
 							<div class={style.wrapFirstSlide}>
 								<Welcome class={style.welcome} />
 								<div class={style.description}>
-									<p>O PICCPED tem como objetivo lhe auxiliar no raciocínio clínico e tomada de decisão para prevenção de eventos adversos na manutenção do Cateter Central de Inserção Periférica (PICC) na população pediátrica e neonatal.</p>
+									<p><TextComponent id="introductionDescription" /></p>
 								</div>
 							</div>
 						</div>
@@ -121,7 +122,7 @@ export default class Introduction extends Component {
 								<Welcome class={style.welcome} />
 								
 								<div class={style.description}>
-									<p>Para iniciar este processo de aprendizado, vamos conhecer algumas definições</p>
+									<p><TextComponent id="introductionLearningProcess" /></p>
 								</div>
 
 								<div className={style.btnDefinitions}>

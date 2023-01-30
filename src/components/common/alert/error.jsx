@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import style from './style.less'
 import Transition from 'react-transition-group/Transition'
 import { BtnPicc } from '../button/button'
+import TextComponent from '../text/Text'
 
 export default class ErrorAlert extends Component {
   constructor(props) {
@@ -16,10 +17,10 @@ export default class ErrorAlert extends Component {
             <div class={ [style.alert, style.error].join(' ') }>
               {/* <h2 class={style.title}>Errado!</h2> */}
               
-              { this.props.message ? <h3 class={style.subtitle}>{ this.props.message }</h3> : null }
+              { this.props.message ? <h3 class={style.subtitle}><TextComponent id={this.props.message}>{this.props.message}</TextComponent></h3> : null }
           
               <div class={`${style.wrapBtn} ${ this.props.message ? '' : style.noMessage }`}>
-                <BtnPicc label="Tente novamente" color="orange" style="width: 230px;" action={ this.props.close } />
+                <BtnPicc label="tryAgain" color="orange" style="width: 230px;" action={ this.props.close } />
               </div>
 
               <div class={`${style.wrapImage} ${ this.props.message ? '' : style.noMessage }`}>

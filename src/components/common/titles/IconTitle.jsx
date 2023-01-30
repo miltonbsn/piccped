@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import TextComponent from '../text/Text'
 import style from './style.less'
 
 export const IconTitle = (props) => (
@@ -8,30 +9,32 @@ export const IconTitle = (props) => (
       :
       <span class={style.icon}>{ props.icon }</span>
     }
-    <span class={style.label}>{ props.label }</span>
-    { props.subtitle ? <small class={style.subtitle}>{ props.subtitle }</small> : null }
+    <span class={style.label}>
+      <TextComponent id={props.label}>{props.label}</TextComponent>
+    </span>
+    { props.subtitle ? <small class={style.subtitle}><TextComponent id={props.subtitle}>{props.subtitle}</TextComponent></small> : null }
   </h2>
 )
 
 export const Title = (props) => (
-  <h2 class={[style.title, props.class].join(' ')}>{ props.label }</h2>
+  <h2 class={[style.title, props.class].join(' ')}><TextComponent id={props.label}>{props.label}</TextComponent></h2>
 )
 
 export const TitleSm = (props) => (
   <h2 class={[style.titleSm, props.class].join(' ')}>
-    { props.label }
-    { props.subtitle ? <small class={style.subtitle}>{ props.subtitle }</small> : null }
+    <TextComponent id={props.label}>{props.label}</TextComponent>
+    { props.subtitle ? <small class={style.subtitle}><TextComponent id={props.subtitle}>{props.subtitle}</TextComponent></small> : null }
   </h2>
 )
 
 export const TitleLg = (props) => (
   <h2 class={style.titleLg}>
-    { props.label }
+    <TextComponent id={props.label}>{props.label}</TextComponent>
   </h2>
 )
 
 export const TitleQuestion = (props) => (
   <h2 class={[style.titleQuestion, props.class].join(' ')}>
-    { props.label }
+    <TextComponent id={props.label}>{props.label}</TextComponent>
   </h2>
 )

@@ -11,27 +11,27 @@ export default class Definitions extends Component {
 			definitions: {
 				segurancaDoPaciente: {
 					title: "Segurança do paciente",
-					description: "Redução a um mínimo aceitável do risco de dano desnecessário associado a assistência a saúde"
+					description: "patientSafetyDescription"
 				},
 				eventoAdverso: {
 					title: "Evento adverso",
-					description: "Incidente que resulta em dano ao paciente"
+					description: "adverseReactionDescription"
 				},
 				picc: {
 					title: "PICC",
-					description: "Cateter inserido através de veia  periférica, com progressão  da ponta até a junção cavoatrial"
+					description: "piccDescription"
 				},
 				simulacaoVirtual: {
 					title: "Simulação virtual",
-					description: "Técnica para potencializar experiências do mundo real em ambiente controlado de forma interativa"
+					description: "virtualSimulationDescription"
 				},
 				raciocinioClinico: {
 					title: "Raciocínio clínico",
-					description: "Processo intelectual onde há avaliação da clínica do paciente"
+					description: "clinicalReasoningDescription"
 				},
 				tomadasDeDecisao: {
 					title: "Tomada de decisão",
-					description: "Processo intelectual que gera alguma conduta a ser seguida após a avaliação clínica do paciente"
+					description: "decisionMakingDescription"
 				}
 			}
     }
@@ -47,12 +47,12 @@ export default class Definitions extends Component {
         <IconTitle icon="D" label="Definições" class={style.title}/>
 
 				<div class={style.groupButtons}>
-					<BtnPicc label="Segurança do Paciente" color="blue" block action={ () => this.showModal( this.state.definitions.segurancaDoPaciente ) }/>
-					<BtnPicc label="Evento Adverso" color="blue" block action={ () => this.showModal( this.state.definitions.eventoAdverso ) }/>
+					<BtnPicc label="Segurança do paciente" color="blue" block action={ () => this.showModal( this.state.definitions.segurancaDoPaciente ) }/>
+					<BtnPicc label="Evento adverso" color="blue" block action={ () => this.showModal( this.state.definitions.eventoAdverso ) }/>
 					<BtnPicc label="PICC" color="blue" block action={ () => this.showModal( this.state.definitions.picc ) }/>
-					<BtnPicc label="Simulação Virtual" color="blue" block action={ () => this.showModal( this.state.definitions.simulacaoVirtual ) }/>
-					<BtnPicc label="Raciocínio Clínico" color="blue" block action={ () => this.showModal( this.state.definitions.raciocinioClinico ) }/>
-					<BtnPicc label="Tomada de Decisão" color="blue" block action={ () => this.showModal( this.state.definitions.tomadasDeDecisao ) }/>
+					<BtnPicc label="Simulação virtual" color="blue" block action={ () => this.showModal( this.state.definitions.simulacaoVirtual ) }/>
+					<BtnPicc label="Raciocínio clínico" color="blue" block action={ () => this.showModal( this.state.definitions.raciocinioClinico ) }/>
+					<BtnPicc label="Tomada de decisão" color="blue" block action={ () => this.showModal( this.state.definitions.tomadasDeDecisao ) }/>
 				</div>
       </div>
     )

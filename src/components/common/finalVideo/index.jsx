@@ -23,7 +23,7 @@ export default class FinalVideo extends Component {
         </div>
 
         <div class={ style.btn }>
-          <BtnPicc label="Próximo" color="pink" icon="arrow-right" right action={ this.props.nextSlider } />
+          <BtnPicc label="Next" color="pink" icon="arrow-right" right action={ this.props.nextSlider } />
         </div>
       </div>
     )

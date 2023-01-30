@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 import style from './BtnPlay.less'
 import Audio from 'react-audio-player'
+import TextComponent from '../text/Text'
 
 export default class BtnPlay extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ export default class BtnPlay extends Component {
         
         <span class={ style.label }>
           <i class="fa fa-play"></i>
-          { this.props.label }
+          <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
         </span>
 
         <Audio src={ this.state.mp3 } ref={(element) => { this.audioPlayer = element; }} />

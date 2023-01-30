@@ -5,6 +5,7 @@ import { BtnPicc } from '../../components/common/button/button'
 import { InfoBtn } from '../../components/common/button/button'
 import Modal from '../../components/common/modal/Modal'
 import Container from '../../components/common/container'
+import TextComponent from '../../components/common/text/Text'
 
 export default class Home extends Component {
 	constructor(props) {
@@ -30,15 +31,21 @@ export default class Home extends Component {
 	showModal(type) {
 		
 		if ( type == 'DESC' ) {
-			this.setState({ modal: { 
-				title: 'PICCPED', 
-				description: 'Este app foi desenvolvido como produto de mestrado da Enfª Sabrina de Souza, programado e desenvolvido pelo programador Milton Bittencourt, sob orientação da Profª Dra Patrícia Kuerten Rocha, coorientação da Profª Dra Ariane Machado, Enfª Msc Andréia Tomazoni e Profª Dra Jane Cristina Anders. Qualquer reprodução, parcial ou total, sem autorização prévia dos autores, ensejará violação à direito autoral, passível de indenização pecuniária.' }, 
-				showModal: true })
+			this.setState({
+				modal: { 
+					title: 'PICCPED',
+					description: 'aboutTheApp'
+				}, 
+				showModal: true
+			})
 		} else {
-			this.setState({ modal: { 
-				title: 'Referências', 
-				description: 'O conteúdo do app foi baseado em: ANVISA, 2017; CDC - CENTER FOR DISEASE CONTROL AND PREVENTION, 2016; INFUSION NURSE SOCIETY, 2016; KEIR; GIESINGER; DUNN, 2014; O’GRADY et al., 2011; QUEENSLAND GOVERNMENT, 2015; THE JOINT COMMISSION, 2012)' }, 
-				showModal: true })
+			this.setState({ 
+				modal: { 
+					title: 'Referências', 
+					description: 'sourceDescription' 
+				},
+				showModal: true
+			})
 		}
 
 
@@ -63,8 +70,14 @@ export default class Home extends Component {
             <BtnPicc label="Começar" color="pink" icon="arrow-right" right action={ () => this.goToPage('/introduction') } />
 						
 						<div class={ style.infoBtn }>
-            	<BtnPicc label="Sobre o app" color="orange" size="small" action={ () => this.showModal('DESC') } />
-							<a class={style.btnLink} onClick={ () => this.showModal('REF') }>Referências</a>
+            	<BtnPicc label="about" color="orange" size="small" action={ () => this.showModal('DESC') } />
+							<a class={style.btnLink} onClick={ () => this.showModal('REF') }><TextComponent id="Referências"></TextComponent></a>
+						</div>
+
+						<div class={style.linksWrapper}>
+							<a onClick={() => this.props.changeLanguage('pt-BR')}><TextComponent id="Portuguese"></TextComponent></a>
+							|
+							<a onClick={() => this.props.changeLanguage('en')}><TextComponent id="English"></TextComponent></a>
 						</div>
           </div>
 
