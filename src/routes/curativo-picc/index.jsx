@@ -36,7 +36,7 @@ export default class CurativoPicc extends Component {
 					},
 					{ 
 						title: 'dressingChangesMaterialsTitle',
-						missingCorrectMessage: 'dressingChangesMaterialsMissingCorrectMessage ',
+						missingCorrectMessage: 'dressingChangesMaterialsMissingCorrectMessage',
 						list: [
 							{ label: 'nonSterileGauze', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'nonSterileGauzeWrongFeedback' },
 							{ label: 'adhesiveSecurementDevices', correct: true, checked: false },
