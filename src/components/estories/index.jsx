@@ -242,8 +242,6 @@ export default class Stories extends Component {
 			className: 'sliderBarTop'
 		}
 
-		console.log(this.props, this.state)
-
 		return (
 			<Container>
 				<div class={style.wrapSlide}>
@@ -338,7 +336,7 @@ export default class Stories extends Component {
 
 				<Popup show={ this.state.showPopup } close={ () => this.closePopup() } class={ [this.state.popupComponent == 'S' ? style.imageScenario : null, this.state.popupComponent == 'NEXT' ? style.alert : null].join(' ') }>
 					{ this.state.popupComponent == 'CG' ? <GeneralCase play={ () => this.playAudio('CG') } /> : null }
-					{ this.state.popupComponent == 'C' ? <Case class={style.noPadding} noAction play={ () => this.playAudio('C') } title={this.props.caseTitle} description={this.props.caseDescriptionModal}/> : null }
+					{ this.state.popupComponent == 'C' ? <Case class={style.noPadding} noAction play={ () => this.playAudio('C') } title={this.props.caseTitle} description={this.props.caseDescriptionModal || this.props.caseDescription}/> : null }
 					{ this.state.popupComponent == 'D' ? <Definitions showModal={ this.showModal } /> : null }
 					{ this.state.popupComponent == 'AG' ? <AcronymGlossary showModal={ this.showModal } /> : null }
 					{ this.state.popupComponent == 'P' ? <Preventions showModal={ this.showModal } /> : null }
