@@ -32,7 +32,7 @@ export default class Procedures extends Component {
 		return (
 			<Container>
 				<div class={style.wrap}>
-					<TitleSm label="Procedimentos de manutenção" subtitle="maintenanceProceduresSubtitle" class={style.title}/>
+					<TitleSm label="Procedimentos de manutenção" class={style.title} />
 
 					<div class={style.proceduresItems}>
 						{ this.state.procedures.map( (item, i) =>
