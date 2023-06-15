@@ -58,7 +58,7 @@ export default class Preventions extends Component {
 
     return (
       <div class={style.wrapper}>
-        <IconTitle icon="P" label="Prevenções" subtitle="preventionsSubtitle" class={style.iconTitle}/>
+        <IconTitle icon="M" label="Prevenções" subtitle="preventionsSubtitle" class={style.iconTitle}/>
 
         <Slider {...settingsInner}>
           { this.state.preventions.map((item) => (

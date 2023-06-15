@@ -28,10 +28,11 @@ export default class TopBar extends Component {
         </div>
 
         <div class={style.col}>
+          <IconLink label="AG" action={ () => this.openComponent('AG') } />
           <IconLink label="CG" action={ () => this.openComponent('CG') } />
           <IconLink label="C" action={ () => this.openComponent('C') } />
           <IconLink label="D" action={ () => this.openComponent('D') } />
-          <IconLink label="P" action={ () => this.openComponent('P') } />
+          <IconLink label="M" action={ () => this.openComponent('P') } />
           <InfoBtn action={ () => this.openComponent('INFO') } />
         </div>
       </div>

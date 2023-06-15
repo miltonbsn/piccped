@@ -6,6 +6,7 @@ import * as utils from '../../common/utils'
 import global from '../style.less'
 import style from './style.less'
 import { BtnPicc } from '../../common/button/button'
+import TextComponent from '../../common/text/Text'
 
 export default class Question extends Component {
   constructor(props) {
@@ -63,6 +64,12 @@ export default class Question extends Component {
             <BtnCheck key={i} class={[style.btn, this.props.style.options].join(' ')} label={item.label} checked={item.checked} action={ () => this.selectItem(i) }/>
           ) }
         </div>
+
+        {this.props.additionalInformation && (
+          <p class={ style.information }>
+            <TextComponent id={this.props.additionalInformation}>{this.props.additionalInformation}</TextComponent>
+          </p>
+        )}
 
         <BtnPicc label="Next" color="orange" icon="arrow-right" right style="width: 220px;" action={ this.verifyQuestions } />
       </div>

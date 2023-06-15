@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { h, Component } from 'preact'
 import style from './style.less'
 import Slider from 'react-slick'
@@ -22,6 +23,7 @@ import FinalVideo from '../common/finalVideo'
 import Video from '../common/video'
 import QuestionSequence from './QuestionSequence'
 import ChooseQuestion from './ChooseQuestion'
+import AcronymGlossary from '../acronymGlossary'
 
 export default class Stories extends Component {
 	constructor(props) {
@@ -207,25 +209,23 @@ export default class Stories extends Component {
 	}
 
 	selectSequence(item) {
-		let sequence = this.state.questionsSequence.questions[item].sequence
-    let currentSequence = this.state.questionsSequence.sequence
-    
-    if ( sequence > currentSequence ){
-      if ( sequence == (currentSequence + 1) ) {
-        let questions = this.state.questionsSequence
-				questions.questions[item].checked = true
-				questions.sequence = sequence
+		let sequence = this.state.questionsSequence.questions[item].sequence;
+		let currentSequence = this.state.questionsSequence.sequence + 1;
 
-        this.setState({ questionsSequence: questions })
-        
-        if ( sequence == this.state.questionsSequence.totalSequence ) {
-					this.showCorrectAlert();
-        }
-      } else {
-        this.showErrorAlertSequence('selectRightSequence')
+		if (sequence.includes(currentSequence)) {
+			let questions = this.state.questionsSequence;
+			questions.questions[item].checked = true;
+			questions.sequence = currentSequence;
+
+			this.setState({ questionsSequence: questions });
+			
+			if ( questions.questions.every(item => item.checked) ) {
+				this.showCorrectAlert();
 			}
-    }
-  }
+		} else {
+			this.showErrorAlertSequence('selectRightSequence');
+		}
+	}
 
 	render() {
 		const settings = {
@@ -241,6 +241,8 @@ export default class Stories extends Component {
 			afterChange: this.currentSlider,
 			className: 'sliderBarTop'
 		}
+
+		console.log(this.props, this.state)
 
 		return (
 			<Container>
@@ -281,6 +283,7 @@ export default class Stories extends Component {
 									list={item.list}
 									style={item.style}
 									scenario={ item.scenario }
+									additionalInformation={item.additionalInformation}
 									coverScenario={ item.coverScenario ? item.coverScenario : null }
 									openScenario={ () => this.showPopup('S', item.scenario) }
 									nextQuestion={ () => this.showCorrectAlert(item.correctMessage) }
@@ -303,13 +306,27 @@ export default class Stories extends Component {
 							</div>
 						: null }
 
-						{ this.props.finalVideo ?
+						{this.props.penultimateVideo ?
 							<div class="slider-item">
 								<div class={style.sliderItem}>
-									<FinalVideo {...this.props.finalVideo} playVideo={ () => this.playVideo(this.props.finalVideo.video) } nextSlider={ () => this.next() }/>
+									<FinalVideo {...this.props.penultimateVideo}
+										playVideo={() => this.playVideo(this.props.penultimateVideo.video)}
+										nextSlider={() => this.next()}
+									/>
 								</div>
 							</div>
-						: null }
+							: null }
+
+						{this.props.finalVideo ?
+							<div class="slider-item">
+								<div class={style.sliderItem}>
+									<FinalVideo {...this.props.finalVideo}
+										playVideo={() => this.playVideo(this.props.finalVideo.video)}
+										nextSlider={() => this.next()}
+									/>
+								</div>
+							</div>
+							: null }
 
 						<div class="slider-item">
 							<div class={style.sliderItem}>
@@ -321,8 +338,9 @@ export default class Stories extends Component {
 
 				<Popup show={ this.state.showPopup } close={ () => this.closePopup() } class={ [this.state.popupComponent == 'S' ? style.imageScenario : null, this.state.popupComponent == 'NEXT' ? style.alert : null].join(' ') }>
 					{ this.state.popupComponent == 'CG' ? <GeneralCase play={ () => this.playAudio('CG') } /> : null }
-					{ this.state.popupComponent == 'C' ? <Case class={style.noPadding} noAction play={ () => this.playAudio('C') } title={this.props.caseTitle} description={this.props.caseDescription}/> : null }
+					{ this.state.popupComponent == 'C' ? <Case class={style.noPadding} noAction play={ () => this.playAudio('C') } title={this.props.caseTitle} description={this.props.caseDescriptionModal}/> : null }
 					{ this.state.popupComponent == 'D' ? <Definitions showModal={ this.showModal } /> : null }
+					{ this.state.popupComponent == 'AG' ? <AcronymGlossary showModal={ this.showModal } /> : null }
 					{ this.state.popupComponent == 'P' ? <Preventions showModal={ this.showModal } /> : null }
 					{ this.state.popupComponent == 'S' ? <Scenario scenario={ this.state.scenario } /> : null }
 					{ this.state.popupComponent == 'V' ? <Scenario scenario={ this.state.scenario } type="video" /> : null }

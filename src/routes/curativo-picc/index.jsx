@@ -25,7 +25,9 @@ export default class CurativoPicc extends Component {
 						title: 'whatShouldYouDo',
 						list: [
 							{ label: 'Trocar curativo', correct: true, checked: false },
-							{ label: 'wait48hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' }
+							{ label: 'wait24hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' },
+							{ label: 'wait48hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' },
+							{ label: 'waitToChange', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						correctMessage: 'dressingChangesCorrectMessage', 
@@ -43,7 +45,9 @@ export default class CurativoPicc extends Component {
 							{ label: 'transparentSemipermeableMembrane', correct: true, checked: false },
 							{ label: 'dressingChangeKit', correct: true, checked: false },
 							{ label: 'sodiumChloride', correct: true, checked: false },
-							{ label: 'alcoholBasedChlorhexidine', correct: true, checked: false }
+							{ label: 'alcoholBasedChlorhexidine', correct: true, checked: false },
+							{ label: 'taInCaseOfNew', correct: true, checked: false },
+							{ label: 'adhesiveRemoverWipes', correct: true, checked: false }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						style: {
@@ -54,14 +58,27 @@ export default class CurativoPicc extends Component {
 					{
 						title: 'dressingChangesStepsTitle',
 						missingCorrectMessage: 'dressingChangesStepsMissingCorrectMessage',
-						list: [ 
+						list: [
 							{ label: 'performHandHygiene', correct: true, checked: false },
 							{ label: 'removeBloodWithSodiumChloride', correct: true, checked: false },
 							{ label: 'removeBloodWithSoakedGauze', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg'], errorMessage: 'removeBloodWithSoakedGauzeWrongFeedback' },
-							{ label: 'dressingWithTSM', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg', '../../assets/svg/mau_posicionamento.svg'], errorMessage: 'dressingWithTSMWrongFeedback' },
 							{ label: 'useTSM', correct: true, checked: false },
+							{ label: 'inNeonatesSkin', correct: true, checked: false }
+						],
+						scenario: '../../assets/scenarios/cenario_gaze.png',
+						additionalInformation: 'neonatesInformation',
+						style: {
+							title: style.thirdTitle,
+							options: style.thirdOptions
+						}
+					},
+					{
+						title: 'keepPerformingTitle',
+						missingCorrectMessage: 'dressingChangesStepsMissingCorrectMessage',
+						list: [
+							{ label: 'dressingWithTSM', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg', '../../assets/svg/mau_posicionamento.svg'], errorMessage: 'dressingWithTSMWrongFeedback' },
 							{ label: 'useAdhesiveSecurement', correct: true, checked: false },
-							{ label: 'performAsepsis', correct: true, checked: false }
+							{ label: 'performAsepsis', correct: false, checked: false, errorMessage: 'performAsepsisWrongFeedback' }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						style: {
@@ -70,10 +87,15 @@ export default class CurativoPicc extends Component {
 						}
 					}
 				],
-				finalVideo: {
-					title: 'Troca de Curativo',
+				penultimateVideo: {
+					title: 'dressingChangeSass',
 					poster: '../../assets/videos/troca-curativo-poster.png',
-					video: `../../assets/videos/${getVideoPath('troca-curativo')}.mp4`
+					video: `../../assets/videos/${getVideoPath('troca-curativo-sass')}.mp4`
+				},
+				finalVideo: {
+					title: 'dressingChangeASD',
+					poster: '../../assets/videos/troca-curativo-poster.png',
+					video: `../../assets/videos/${getVideoPath('troca-curativo-asd')}.mp4`
 				}
 			}
 		}

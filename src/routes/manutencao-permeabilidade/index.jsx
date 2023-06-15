@@ -22,10 +22,9 @@ export default class ManutencaoPermeabilidade extends Component {
 			questions: [
 				{
 					title: 'permeabilityMaintenanceTitle',
-					missingCorrectMessage: '',
+					missingCorrectMessage: 'permeabilityMaintenanceTitleMissingCorrectMessage',
 					list: [
 						{ label: 'performFlushingSodiumChloride', correct: true, checked: false },
-						{ label: 'heparinSubstance', correct: false, checked: false, errorMessage: 'permeabilityMaintenanceMissingCorrectMessage' },
 						{ label: 'pulsatileFlushing', correct: true, checked: false },
 						{ label: 'flushingPositivePressure', correct: true, checked: false },
 						{ label: 'flushingWithoutOtherTechniques', correct: false, checked: false, errorImage: ['../../assets/svg/obstrucao.svg'], errorMessage: 'flushingWithoutOtherTechniquesErrorMessage' }
@@ -36,10 +35,11 @@ export default class ManutencaoPermeabilidade extends Component {
 						options: style.firstOptions
 					}
 				},
-				{ 
+				{
 					title: 'maintenanceOfCatheterTitle',
 					missingCorrectMessage: 'maintenanceOfCatheterMissingCorrectMessage',
 					list: [
+						{ label: 'forNeonatesItIsNotRecommended', correct: true, checked: false },
 						{ label: 'flushingAndLockingEverySixHours', correct: true, checked: false },
 						{ label: 'flushingBeginningAndAtTheEnd', correct: true, checked: false },
 						{ label: 'notNecessaryFlushingAndLocking', correct: false, checked: false, errorImage: ['../../assets/svg/obstrucao.svg'], errorMessage: 'notNecessaryFlushingAndLockingErrorMessage' },
@@ -54,7 +54,7 @@ export default class ManutencaoPermeabilidade extends Component {
 					}
 				},
 				{ 
-					title: '',
+					title: 'flushingVolumeTitle',
 					list: [
 						{ label: '0,5 ml', correct: false, checked: false, errorImage: ['../../assets/svg/obstrucao.svg'], errorMessage: 'flushingVolumeErrorMessage' },
 						{ label: '1 ml', correct: true, checked: false },
