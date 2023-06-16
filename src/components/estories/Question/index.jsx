@@ -54,7 +54,7 @@ export default class Question extends Component {
         </div>
 
         { this.props.scenario ?
-          <div class={ style.wrapScenario }>
+          <div class={ [style.wrapScenario, this.props.style.wrapScenario].join(' ') }>
             <BtnScenario label="Cenário" icon={ this.props.coverScenario ? this.props.coverScenario : this.props.scenario } class={style.btnScenario} action={ this.props.openScenario } />
           </div>
         : null }

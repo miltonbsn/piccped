@@ -45,7 +45,7 @@ export default class PrevencaoInfeccao extends Component {
 						{ label: '48hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] }
 					],
 					scenario: '../../assets/scenarios/cenario-prevenscao-infeccao-1.png',
-					correctMessage: 'It is possible to use de PICC immediately as long as the tip position has been confirmed as being in a central position.',
+					correctMessage: 'It is possible to use the PICC immediately as long as the tip position has been confirmed as being in a central position.',
 					style: {
 						wrapTitle: style.secondWrapTitle,
 						title: style.secondTitle,

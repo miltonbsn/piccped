@@ -43,7 +43,6 @@ export default class ManutencaoPermeabilidade extends Component {
 						{ label: 'flushingAndLockingEverySixHours', correct: true, checked: false },
 						{ label: 'flushingBeginningAndAtTheEnd', correct: true, checked: false },
 						{ label: 'notNecessaryFlushingAndLocking', correct: false, checked: false, errorImage: ['../../assets/svg/obstrucao.svg'], errorMessage: 'notNecessaryFlushingAndLockingErrorMessage' },
-						{ label: 'syringShouldBeUsed', correct: false, checked: false, errorImage: ['../../assets/svg/rompimento.svg'], errorMessage: 'syringShouldBeUsedErrorMessage' },
 						{ label: 'alwaysUseSyringe', correct: true, checked: false },
 						{ label: 'useInfusionPump', correct: true, checked: false }
 					],

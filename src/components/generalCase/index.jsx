@@ -17,7 +17,6 @@ export default class GeneralCase extends Component {
 
         <div class={style.content}>
           <p><TextComponent id="generalClinicalCaseDescription" /></p>
-          <p><TextComponent id="generalClinicalCaseDescriptionTwo" /></p>
         </div>    
       </div>
     )

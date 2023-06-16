@@ -51,6 +51,8 @@ export default class CurativoPicc extends Component {
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						style: {
+							wrapScenario: style.firstWrapScenario,
+							wrapTitle: style.firstWrapTitle,
 							title: style.secondTitle,
 							options: style.secondOptions
 						}
