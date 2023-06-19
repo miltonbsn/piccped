@@ -71,7 +71,7 @@ export default class Introduction extends Component {
 			this.setState({ nurse: { show: false } })
 		}
 
-		if ( e == 4 ) {
+		if ( e == 3 ) {
 			this.setState({ btnSkip: { label: 'Procedimentos', color: 'pink', style: 'width: 200px;' } })
 		} else {
 			this.setState({ btnSkip: { label: 'Pular', color: 'orange', style: 'width: 140px;' } })
