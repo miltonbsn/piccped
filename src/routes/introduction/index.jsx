@@ -14,6 +14,7 @@ import Preventions from '../../components/preventions'
 import GeneralCase from '../../components/generalCase'
 import Player from '../../components/common/audio'
 import TextComponent from '../../components/common/text/Text'
+import AcronymGlossary from '../../components/acronymGlossary'
 
 export default class Introduction extends Component {
 	constructor(props) {
@@ -149,6 +150,14 @@ export default class Introduction extends Component {
 					</div>
 
 					<div key={5} class="slider-item">
+						<div class={style.item}>
+							<div class={style.wrapContent}>
+								<AcronymGlossary showModal={this.showModal} />
+							</div>
+						</div>
+					</div>
+
+					<div key={6} class="slider-item">
 						<div class={style.item}>
 							<div class={style.wrapContent}>
 								<GeneralCase play={ this.playAudio } />
