@@ -30,7 +30,7 @@ export default class AcronymGlossary extends Component {
 			<div class={style.wrapper}>
 				<IconTitle icon="AG" label="Acronym glossary" class={style.title} />
 
-				<div class={style.groupButtons}>
+				<div class={style.content}>
 					{this.state.definitions.map(definition => (
 						<p>{definition}</p>
 					))}
