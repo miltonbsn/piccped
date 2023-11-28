@@ -7,6 +7,7 @@ import global from '../style.less'
 import style from './style.less'
 import { BtnPicc } from '../../common/button/button'
 import TextComponent from '../../common/text/Text'
+import { getLanguage } from '../../../utils/i18nHelper'
 
 export default class Question extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class Question extends Component {
 
   verifyQuestions() {
     const { questions } = this.state;
-    const language = localStorage.getItem('i18n');
+    const language = getLanguage();
 
     if (questions.some(question => !(question.onlyEnglish && language === 'pt-BR') && question.correct && !question.checked )) {
       this.props.showErrorMissingCorrect();
