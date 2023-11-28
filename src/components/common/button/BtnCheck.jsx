@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 import TextComponent from '../text/Text'
 import style from './BtnCheck.less'
+import { checkTranslation } from '../../../utils/i18nHelper'
 
 export default class BtnCheck extends Component {
   constructor(props) {
@@ -24,7 +25,9 @@ export default class BtnCheck extends Component {
   }
 
   render () {
-    return (
+    const hasTranslation = checkTranslation(this.props.label);
+
+    return hasTranslation ? (
       <button class={ this.state.buttonClass.concat([ this.props.checked ? style.checked : null ]).join(' ') } onClick={this.props.action} onTouchStart={ () => this.enterBtn() } onTouchEnd={ () => this.leaveBtn() }>
         <span class={style.label}>
           <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
@@ -33,6 +36,6 @@ export default class BtnCheck extends Component {
           { this.props.checked ? <i class="fa fa-check"></i> : null }
         </span>
       </button>
-    )
+    ) : null;
   }
 }

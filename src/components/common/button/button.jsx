@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 import TextComponent from '../text/Text';
 import style from './style.less'
+import { checkTranslation } from '../../../utils/i18nHelper';
 
 export class BtnPicc extends Component {
   constructor(props) {
@@ -41,16 +42,20 @@ export class BtnPicc extends Component {
   }
 
   render () {
+    const hasTranslation = checkTranslation(this.props.label);
+
     return (
-      <button class={ this.state.buttonClass.join(' ') } style={this.props.style} onClick={this.props.action} onTouchStart={ () => this.enterBtn() } onTouchEnd={ () => this.leaveBtn() }>
-        <span class={style.label}>
-          { this.props.icon && this.props.left ?
-            <i className={`${style.icon} fa fa-${this.props.icon} ${this.props.left ? style.left : null}`}></i> :   null }
-          <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
-          { this.props.icon && this.props.right ?
-            <i className={`${style.icon} fa fa-${this.props.icon} ${this.props.right ? style.right : null}`}></i> : null }
-        </span>
-      </button>
+      hasTranslation && (
+        <button class={ this.state.buttonClass.join(' ') } style={this.props.style} onClick={this.props.action} onTouchStart={ () => this.enterBtn() } onTouchEnd={ () => this.leaveBtn() }>
+          <span class={style.label}>
+            { this.props.icon && this.props.left ?
+              <i className={`${style.icon} fa fa-${this.props.icon} ${this.props.left ? style.left : null}`}></i> :   null }
+            <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
+            { this.props.icon && this.props.right ?
+              <i className={`${style.icon} fa fa-${this.props.icon} ${this.props.right ? style.right : null}`}></i> : null }
+          </span>
+        </button>
+      )
     )
   }
 }
@@ -120,16 +125,20 @@ export class IconLink extends Component {
   }
 
   render() {
+    const hasTranslation = checkTranslation(this.props.label);
+    
     return (
-      <button
-        class={ this.state.buttonClass.join(' ') }
-        onTouchStart={ () => this.enterBtn() }
-        onTouchEnd={ () => this.leaveBtn() }
-        onClick={ this.props.action }>
-          <span>
-            <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
-          </span>
-      </button>
+      hasTranslation && (
+        <button
+          class={ this.state.buttonClass.join(' ') }
+          onTouchStart={ () => this.enterBtn() }
+          onTouchEnd={ () => this.leaveBtn() }
+          onClick={ this.props.action }>
+            <span>
+              <TextComponent id={this.props.label}>{this.props.label}</TextComponent>
+            </span>
+        </button>
+      )
     )
   }
 }

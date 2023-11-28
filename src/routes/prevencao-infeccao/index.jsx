@@ -22,6 +22,7 @@ export default class PrevencaoInfeccao extends Component {
 			styleCase: style.case,
 			questions: [
 				{
+					onlyEnglish: true,
 					title: 'electrolyteReplacementQuestionTitle',
 					list: [
 						{ label: 'animationOne', correct: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'electrolyteReplacementQuestionErrorMessage' },
@@ -37,7 +38,8 @@ export default class PrevencaoInfeccao extends Component {
 					}
 				},
 				{
-					title: 'How soon after PICC insertion can the PICC be used if the tip position has been confirmed as being in a central position?',
+					onlyEnglish: true,
+					title: 'howSoonAfterPiccInsertionTitle',
 					list: [
 						{ label: 'immediately', correct: true, checked: false },
 						{ label: '12hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] },
@@ -45,7 +47,7 @@ export default class PrevencaoInfeccao extends Component {
 						{ label: '48hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'] }
 					],
 					scenario: '../../assets/scenarios/cenario-prevenscao-infeccao-1.png',
-					correctMessage: 'It is possible to use the PICC immediately as long as the tip position has been confirmed as being in a central position.',
+					correctMessage: 'howSoonAfterPiccInsertionCorrectMessage',
 					style: {
 						wrapTitle: style.secondWrapTitle,
 						title: style.secondTitle,
@@ -158,6 +160,16 @@ export default class PrevencaoInfeccao extends Component {
 						{ sequence: [2, 5], checked: false, label: 'donNonSterileGloves', icon: '../../assets/svg/icons_luva.svg', video: '../../assets/videos/question-video-luva.mp4', cover: '../../assets/videos/question-video-luva-cover.png' }
 					],
 					videoFinal: { video: '../../assets/videos/question-video-flush.mp4', cover: '../../assets/videos/question-video-flush-cover.png' },
+					style: {}
+				}
+			],
+			chooseQuestions: [
+				{
+					title: 'electrolyteReplacementQuestionTitle',
+					list: [
+						{ label: 'animationOne', correct: false, video: '../../assets/videos/question-video-error.mp4', cover: '../../assets/videos/question-video-error-cover.png', errorImage: '../../assets/svg/infeccao.svg', errorMessage: 'A desconexão do sistema de infusão não deve ser realizada intermitentemente, se este sistema de infusão for aberto e desconectado o conjunto deverá ser trocado e um novo sistema de infusão deve ser inserido.' },
+						{ label: 'animationTwo', correct: true, video: '../../assets/videos/question-video-correct.mp4', cover: '../../assets/videos/question-video-correct-cover.png', correctMessage: 'Parabéns, você preveniu que a ICSRC atingisse Arthur!' }
+					],
 					style: {}
 				}
 			],

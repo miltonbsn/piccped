@@ -15,6 +15,7 @@ import GeneralCase from '../../components/generalCase'
 import Player from '../../components/common/audio'
 import TextComponent from '../../components/common/text/Text'
 import AcronymGlossary from '../../components/acronymGlossary'
+import { renderWhenEnglish } from '../../utils/i18nHelper'
 
 export default class Introduction extends Component {
 	constructor(props) {
@@ -149,13 +150,15 @@ export default class Introduction extends Component {
 						</div>
 					</div>
 
-					<div key={5} class="slider-item">
-						<div class={style.item}>
-							<div class={style.wrapContent}>
-								<AcronymGlossary showModal={this.showModal} />
+					{renderWhenEnglish() && (
+						<div key={5} class="slider-item">
+							<div class={style.item}>
+								<div class={style.wrapContent}>
+									<AcronymGlossary showModal={this.showModal} />
+								</div>
 							</div>
 						</div>
-					</div>
+					)}
 
 					<div key={6} class="slider-item">
 						<div class={style.item}>

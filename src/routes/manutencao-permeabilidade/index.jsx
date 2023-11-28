@@ -39,7 +39,7 @@ export default class ManutencaoPermeabilidade extends Component {
 					title: 'maintenanceOfCatheterTitle',
 					missingCorrectMessage: 'maintenanceOfCatheterMissingCorrectMessage',
 					list: [
-						{ label: 'forNeonatesItIsNotRecommended', correct: true, checked: false },
+						{ label: 'forNeonatesItIsNotRecommended', correct: true, checked: false, onlyEnglish: true },
 						{ label: 'flushingAndLockingEverySixHours', correct: true, checked: false },
 						{ label: 'flushingBeginningAndAtTheEnd', correct: true, checked: false },
 						{ label: 'notNecessaryFlushingAndLocking', correct: false, checked: false, errorImage: ['../../assets/svg/obstrucao.svg'], errorMessage: 'notNecessaryFlushingAndLockingErrorMessage' },

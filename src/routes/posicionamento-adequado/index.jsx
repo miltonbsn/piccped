@@ -27,8 +27,8 @@ export default class PosicionamentoAdequado extends Component {
 							{ label: 'dressingWithTransparentMembrane', correct: true, checked: false },
 							{ label: 'dressingIntegrity', correct: true, checked: false },
 							{ label: 'catheterStabilization', correct: true, checked: false },
-							{ label: 'dressingWithAnISD', correct: true, checked: false },
-							{ label: 'takeCareToEnsure', correct: true, checked: false }
+							{ label: 'dressingWithAnISD', correct: true, checked: false, onlyEnglish: true },
+							{ label: 'takeCareToEnsure', correct: true, checked: false, onlyEnglish: true }
 						],
 						scenario: '../../assets/videos/scenario-posicionamento-adequado.mp4',
 						coverScenario: '../../assets/scenarios/cover-scenario-posicionamento-adequado.png',
