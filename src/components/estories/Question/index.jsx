@@ -21,12 +21,13 @@ export default class Question extends Component {
 
   verifyQuestions() {
     const { questions } = this.state;
+    const language = localStorage.getItem('i18n');
 
-    if (questions.some(question => question.correct && !question.checked)) {
+    if (questions.some(question => !(question.onlyEnglish && language === 'pt-BR') && question.correct && !question.checked )) {
       this.props.showErrorMissingCorrect();
     }
 
-    if (questions.every(question => (question.correct && question.checked) || (!question.correct && !question.checked))) {
+    if (questions.every(question => (question.correct && question.checked) || (!question.correct && !question.checked) || (question.onlyEnglish && language === 'pt-BR'))) {
       this.props.nextQuestion();
     }
   }

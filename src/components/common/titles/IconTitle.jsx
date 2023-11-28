@@ -7,7 +7,9 @@ export const IconTitle = (props) => (
     { props.largeIcon ?
       <span class={[style.icon, style.largeIcon].join(' ')}>{ props.icon }</span>
       :
-      <span class={style.icon}>{ props.icon }</span>
+      <span class={style.icon}>
+        <TextComponent id={props.icon}>{props.icon}</TextComponent>
+      </span>
     }
     <span class={style.label}>
       <TextComponent id={props.label}>{props.label}</TextComponent>

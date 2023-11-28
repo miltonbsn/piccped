@@ -24,6 +24,7 @@ import Video from '../common/video'
 import QuestionSequence from './QuestionSequence'
 import ChooseQuestion from './ChooseQuestion'
 import AcronymGlossary from '../acronymGlossary'
+import { renderWhenEnglish } from '../../utils/i18nHelper'
 
 export default class Stories extends Component {
 	constructor(props) {
@@ -261,7 +262,7 @@ export default class Stories extends Component {
 							</div>
 						) : null }
 
-						{ this.props.chooseQuestions ? this.props.chooseQuestions.map( (item, i) =>
+						{ this.props.chooseQuestions && !renderWhenEnglish() ? this.props.chooseQuestions.map( (item, i) =>
 							<div class="slider-item" key={i}>
 								<ChooseQuestion { ...item }
 									playVideo={ this.playVideo }
@@ -273,23 +274,25 @@ export default class Stories extends Component {
 						) : null }
 
             { this.props.questions ? this.props.questions.map( (item, i) => 
-              <div class="slider-item" key={i}>
-                <Question
-									nextSlider={ () => this.next() }
-									title={item.title}
-									subtitle={item.subtitle}
-									list={item.list}
-									style={item.style}
-									scenario={ item.scenario }
-									additionalInformation={item.additionalInformation}
-									coverScenario={ item.coverScenario ? item.coverScenario : null }
-									openScenario={ () => this.showPopup('S', item.scenario) }
-									nextQuestion={ () => this.showCorrectAlert(item.correctMessage) }
-									action={ () => this.updateCurrentQuestion(i) }
-									errorQuestion={ this.showErrorAlert } 
-									showErrorMissingCorrect={() => this.showErrorMissingCorrect(item.missingCorrectMessage)}	
-								/>
-              </div>
+							!item.onlyEnglish || (item.onlyEnglish && renderWhenEnglish()) ? (
+								<div class="slider-item" key={i}>
+									<Question
+										nextSlider={ () => this.next() }
+										title={item.title}
+										subtitle={item.subtitle}
+										list={item.list}
+										style={item.style}
+										scenario={ item.scenario }
+										additionalInformation={item.additionalInformation}
+										coverScenario={ item.coverScenario ? item.coverScenario : null }
+										openScenario={ () => this.showPopup('S', item.scenario) }
+										nextQuestion={ () => this.showCorrectAlert(item.correctMessage) }
+										action={ () => this.updateCurrentQuestion(i) }
+										errorQuestion={ this.showErrorAlert } 
+										showErrorMissingCorrect={() => this.showErrorMissingCorrect(item.missingCorrectMessage)}	
+									/>
+								</div>
+							) : null
             ) : null }
 
 						{ this.props.sliderText ?
@@ -304,7 +307,7 @@ export default class Stories extends Component {
 							</div>
 						: null }
 
-						{this.props.penultimateVideo ?
+						{this.props.penultimateVideo && renderWhenEnglish() ?
 							<div class="slider-item">
 								<div class={style.sliderItem}>
 									<FinalVideo {...this.props.penultimateVideo}

@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
 import style from './style.less'
 import Estories from '../../components/estories'
-import { getVideoPath } from '../../utils/i18nHelper'
+import { getVideoPath, renderWhenEnglish } from '../../utils/i18nHelper'
 
 export default class CurativoPicc extends Component {
 	constructor(props) {
@@ -27,7 +27,7 @@ export default class CurativoPicc extends Component {
 							{ label: 'Trocar curativo', correct: true, checked: false },
 							{ label: 'wait24hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' },
 							{ label: 'wait48hours', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' },
-							{ label: 'waitToChange', correct: false, checked: false, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' }
+							{ label: 'waitToChange', correct: false, checked: false, onlyEnglish: true, errorImage: ['../../assets/svg/infeccao.svg'], errorMessage: 'dressingChangesWrongFeedback' }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						correctMessage: 'dressingChangesCorrectMessage', 
@@ -46,8 +46,8 @@ export default class CurativoPicc extends Component {
 							{ label: 'dressingChangeKit', correct: true, checked: false },
 							{ label: 'sodiumChloride', correct: true, checked: false },
 							{ label: 'alcoholBasedChlorhexidine', correct: true, checked: false },
-							{ label: 'taInCaseOfNew', correct: true, checked: false },
-							{ label: 'adhesiveRemoverWipes', correct: true, checked: false }
+							{ label: 'taInCaseOfNew', correct: true, checked: false, onlyEnglish: true },
+							{ label: 'adhesiveRemoverWipes', correct: true, checked: false, onlyEnglish: true }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						style: {
@@ -58,6 +58,7 @@ export default class CurativoPicc extends Component {
 						}
 					},
 					{
+						onlyEnglish: true,
 						title: 'dressingChangesStepsTitle',
 						missingCorrectMessage: 'dressingChangesStepsMissingCorrectMessage',
 						list: [
@@ -65,7 +66,7 @@ export default class CurativoPicc extends Component {
 							{ label: 'removeBloodWithSodiumChloride', correct: true, checked: false },
 							{ label: 'removeBloodWithSoakedGauze', correct: false, checked: false, errorImage: ['../../assets/svg/flebite.svg'], errorMessage: 'removeBloodWithSoakedGauzeWrongFeedback' },
 							{ label: 'useTSM', correct: true, checked: false },
-							{ label: 'inNeonatesSkin', correct: true, checked: false }
+							{ label: 'inNeonatesSkin', correct: true, checked: false, onlyEnglish: true }
 						],
 						scenario: '../../assets/scenarios/cenario_gaze.png',
 						additionalInformation: 'neonatesInformation',
@@ -75,6 +76,7 @@ export default class CurativoPicc extends Component {
 						}
 					},
 					{
+						onlyEnglish: true,
 						title: 'keepPerformingTitle',
 						missingCorrectMessage: 'dressingChangesStepsMissingCorrectMessage',
 						list: [

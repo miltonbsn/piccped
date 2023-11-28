@@ -4,6 +4,7 @@ import { route } from 'preact-router'
 import Container from '../../components/common/container'
 import { TitleSm } from '../../components/common/titles/IconTitle'
 import { BtnPicc } from '../../components/common/button/button'
+import { renderWhenEnglish } from '../../utils/i18nHelper'
 
 export default class Procedures extends Component {
 	constructor() {
@@ -29,10 +30,10 @@ export default class Procedures extends Component {
 	}
 
 	render() {
-		return (
+		return (  
 			<Container>
 				<div class={style.wrap}>
-					<TitleSm label="Procedimentos de manutenção" class={style.title} />
+					<TitleSm label="Procedimentos de manutenção" subtitle={renderWhenEnglish() ? '' : 'maintenanceProceduresSubtitle'} class={style.title} />
 
 					<div class={style.proceduresItems}>
 						{ this.state.procedures.map( (item, i) =>

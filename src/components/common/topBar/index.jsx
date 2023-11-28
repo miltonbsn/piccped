@@ -3,6 +3,7 @@ import style from './style.less'
 import { route } from 'preact-router'
 import { BackLink, IconLink, InfoBtn } from '../button/button'
 import { IconTitle } from '../titles/IconTitle'
+import { renderWhenEnglish } from '../../../utils/i18nHelper'
 
 export default class TopBar extends Component {
   constructor(props) {
@@ -28,7 +29,9 @@ export default class TopBar extends Component {
         </div>
 
         <div class={style.col}>
-          <IconLink label="AG" action={ () => this.openComponent('AG') } />
+          {renderWhenEnglish() && (
+            <IconLink label="AG" action={ () => this.openComponent('AG') } />
+          )}
           <IconLink label="CG" action={ () => this.openComponent('CG') } />
           <IconLink label="C" action={ () => this.openComponent('C') } />
           <IconLink label="D" action={ () => this.openComponent('D') } />
